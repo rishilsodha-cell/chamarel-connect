@@ -14,6 +14,7 @@ import cafeOutingImg from "@/assets/photos/cafe-outing.png";
 import craftSessionImg from "@/assets/photos/craft-session.png";
 import gardeningPottingImg from "@/assets/photos/gardening-potting.png";
 import zooVisitImg from "@/assets/photos/zoo-visit.png";
+import gardeningPairImg from "@/assets/photos/gardening-pair.png";
 
 const contactSchema = z.object({
   firstName: z.string().min(1, "Required"),
