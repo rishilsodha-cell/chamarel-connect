@@ -11,6 +11,7 @@ import Referrals from "./pages/Referrals.tsx";
 import Careers from "./pages/Careers.tsx";
 import Privacy from "./pages/Privacy.tsx";
 import CommunityCare from "./pages/CommunityCare.tsx";
+import CommunityCarePage from "./pages/CommunityCarePage.tsx";
 import Gallery from "./pages/Gallery.tsx";
 import Stories from "./pages/Stories.tsx";
 import NotFound from "./pages/NotFound.tsx";
@@ -32,6 +33,7 @@ const App = () => (
           <Route path="/careers" element={<Careers />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/community-care" element={<CommunityCare />} />
+          <Route path="/community-care-services" element={<CommunityCarePage />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/stories" element={<Stories />} />
           <Route path="*" element={<NotFound />} />

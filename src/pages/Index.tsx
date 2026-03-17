@@ -8,6 +8,7 @@ import Layout from "@/components/Layout";
 import FadeIn from "@/components/FadeIn";
 import InstagramGrid from "@/components/InstagramGrid";
 import OurHome from "@/components/OurHome";
+import YourNeedsSection from "@/components/YourNeedsSection";
 import heroImage from "@/assets/hero-care.jpg";
 import gardenPartyImg from "@/assets/photos/garden-party.png";
 import cafeOutingImg from "@/assets/photos/cafe-outing.png";
@@ -25,11 +26,6 @@ const contactSchema = z.object({
 
 type ContactForm = z.infer<typeof contactSchema>;
 
-const needs = [
-  { title: "Autism", path: "/your-needs/autism", image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400", bg: "bg-accent/20" },
-  { title: "Learning Disabilities", path: "/your-needs/learning-disabilities", image: "https://images.unsplash.com/photo-1531983412531-1f49a365ffed?w=400", bg: "bg-amber-100" },
-  { title: "Mental Health", path: "/your-needs/mental-health", image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400", bg: "bg-purple-100" },
-];
 
 const moments = [
   { caption: "Summer Garden Party", image: gardenPartyImg },
@@ -97,28 +93,15 @@ const Index = () => {
       </section>
 
       {/* Your Needs */}
-      <section className="section-padding">
-        <div className="container-narrow">
-          <FadeIn>
-            <h2 className="text-3xl md:text-4xl font-medium text-center mb-4">Your Needs</h2>
-            <p className="text-center text-foreground/70 max-w-2xl mx-auto mb-12">
-              We provide tailored care for people with learning disabilities, autism, and mental health needs.
-            </p>
-          </FadeIn>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-3xl mx-auto">
-            {needs.map((need, i) => (
-              <FadeIn key={i} delay={i * 0.08}>
-                <Link to={need.path} className="flex flex-col items-center text-center gap-5 group">
-                  <div className={`${need.bg} w-40 h-40 rounded-full overflow-hidden transition-transform duration-300 group-hover:scale-105`}>
-                    <img src={need.image} alt={need.title} className="w-full h-full object-cover" />
-                  </div>
-                  <span className="text-lg font-semibold text-foreground">{need.title}</span>
-                </Link>
-              </FadeIn>
-            ))}
-          </div>
+      <FadeIn>
+        <div className="container-narrow pt-16 md:pt-20">
+          <h2 className="text-3xl md:text-4xl font-medium text-center mb-4">Your Needs</h2>
+          <p className="text-center text-foreground/70 max-w-2xl mx-auto">
+            We provide tailored care for people with learning disabilities, autism, and mental health needs.
+          </p>
         </div>
-      </section>
+      </FadeIn>
+      <YourNeedsSection homepage />
 
       {/* Our Home */}
       <OurHome />
