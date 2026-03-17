@@ -58,13 +58,13 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden xl:flex items-center gap-6">
+        <nav className="hidden lg:flex items-center gap-2.5">
           {desktopLinks.map((link) => (
             <Link
               key={link.path}
               to={link.path}
               onClick={() => handleClick(link.path)}
-              className={`text-xs font-medium tracking-wide uppercase transition-opacity duration-200 relative group ${
+              className={`text-[12px] font-medium tracking-normal uppercase transition-opacity duration-200 relative group whitespace-nowrap ${
                 isActive(link.path)
                   ? "text-primary opacity-100"
                   : "text-foreground/70 hover:text-foreground hover:opacity-100"
