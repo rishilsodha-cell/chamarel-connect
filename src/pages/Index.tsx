@@ -47,13 +47,6 @@ const stories = [
   { title: "Thriving in the community", excerpt: "Mark's progression from intensive support to independent living with our dedicated care team." },
 ];
 
-const trustBadges = [
-  { icon: ShieldCheck, label: "CQC Rated Good" },
-  { icon: BadgeCheck, label: "Staff Verified" },
-  { icon: Heart, label: "National Living Wage" },
-  { icon: UtensilsCrossed, label: "Food Hygiene Rating" },
-];
-
 const Index = () => {
   const { register, handleSubmit, reset, formState: { errors } } = useForm<ContactForm>({
     resolver: zodResolver(contactSchema),
