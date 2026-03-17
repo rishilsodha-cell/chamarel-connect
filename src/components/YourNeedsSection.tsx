@@ -11,7 +11,7 @@ const needs = [
     image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400",
     bg: "bg-accent/20",
     cta: "Find Out More",
-    path: "/your-needs/autism",
+    path: "/#get-in-touch",
     body: "At Chamarel Healthcare, we understand that every autistic person experiences the world differently. Our specialist autism support is built around each individual's unique communication style, sensory preferences, and personal strengths — never a one-size-fits-all approach.",
     bullets: [
       "Structured daily routines that create predictability, safety, and confidence",
