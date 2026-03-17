@@ -22,7 +22,7 @@ const needs = [
   { icon: Puzzle, title: "Autism", path: "/your-needs" },
   { icon: Brain, title: "Learning Disabilities", path: "/your-needs" },
   { icon: HeartPulse, title: "Mental Health", path: "/your-needs" },
-  { icon: Activity, title: "Complex & Enhanced Care", path: "/your-needs" },
+  { icon: Activity, title: "Enhanced Care", path: "/your-needs" },
   { icon: Sparkles, title: "Brain Injury Rehabilitation", path: "/your-needs" },
 ];
 
