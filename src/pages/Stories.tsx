@@ -107,6 +107,7 @@ const Stories = () => {
                     >
                       Read More <ArrowRight size={16} />
                     </Link>
+                    <SocialShareButtons title={story.headline} />
                   </div>
                 </div>
               </FadeIn>

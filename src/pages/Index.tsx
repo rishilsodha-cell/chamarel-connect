@@ -207,6 +207,9 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Instagram Feed */}
+      <InstagramGrid />
+
       {/* Contact */}
       <section className="section-padding bg-secondary" id="contact">
         <div className="container-narrow">

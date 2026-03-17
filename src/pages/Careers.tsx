@@ -48,6 +48,37 @@ const Careers = () => (
         </div>
       </div>
     </section>
+
+    {/* LinkedIn Section */}
+    <section className="section-padding">
+      <div className="container-narrow max-w-2xl">
+        <FadeIn>
+          <div className="bg-card rounded-2xl p-8 md:p-10 text-center" style={{ boxShadow: "var(--card-shadow)" }}>
+            <div className="w-14 h-14 rounded-2xl bg-[hsl(201,100%,35%)] flex items-center justify-center mx-auto mb-5">
+              <Linkedin size={28} strokeWidth={1.5} className="text-white" />
+            </div>
+            <h2 className="text-2xl font-medium mb-3">Follow Us on LinkedIn</h2>
+            <p className="text-sm text-muted-foreground leading-relaxed mb-2">
+              We share team updates, job opportunities, and care sector insights on LinkedIn.
+            </p>
+            <div className="flex items-center justify-center gap-4 my-6 text-sm text-muted-foreground">
+              <span className="font-semibold text-foreground">Chamarel Healthcare</span>
+              <span>·</span>
+              <span>2.4K followers</span>
+            </div>
+            <a
+              href="https://linkedin.com/company/chamarelhealthcare"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-white font-semibold bg-[hsl(201,100%,35%)] hover:opacity-90 transition-all hover:-translate-y-0.5 hover:shadow-lg"
+            >
+              <Linkedin size={18} strokeWidth={1.5} />
+              Follow on LinkedIn
+            </a>
+          </div>
+        </FadeIn>
+      </div>
+    </section>
   </Layout>
 );
 
