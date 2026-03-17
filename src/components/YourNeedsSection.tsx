@@ -29,7 +29,7 @@ const needs = [
     image: "https://images.unsplash.com/photo-1531983412531-1f49a365ffed?w=400",
     bg: "bg-amber-100",
     cta: "Find Out More",
-    path: "/your-needs/learning-disabilities",
+    path: "/#get-in-touch",
     body: "We provide specialist, values-led support for adults with mild, moderate, and profound learning disabilities. Our approach is rooted in Positive Behaviour Support (PBS) and person-centred planning — ensuring every individual is at the heart of decisions about their own life.",
     bullets: [
       "Fully co-produced care plans developed with the individual, their family, and professional network",
