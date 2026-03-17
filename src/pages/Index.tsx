@@ -119,6 +119,9 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Our Home */}
+      <OurHome />
+
       {/* Moments That Matter — Photo Strip */}
       <section className="py-16">
         <div className="container-narrow mb-8">
