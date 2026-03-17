@@ -176,12 +176,17 @@ const Index = () => {
           <div className="grid md:grid-cols-3 gap-6">
             {stories.map((story, i) => (
               <FadeIn key={i} delay={i * 0.1}>
-                <div className="p-8 bg-card rounded-2xl h-full flex flex-col" style={{ boxShadow: "var(--card-shadow)" }}>
-                  <h3 className="text-lg font-medium mb-3">{story.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed flex-1">{story.excerpt}</p>
-                  <Link to="/stories" className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-accent hover:text-primary transition-colors">
-                    Read More <ArrowRight size={16} />
-                  </Link>
+                <div className="bg-card rounded-2xl h-full flex flex-col overflow-hidden border-t-4 border-primary" style={{ boxShadow: "var(--card-shadow)" }}>
+                  <div className="h-[180px] overflow-hidden">
+                    <img src={story.image} alt={story.title} className="w-full h-full object-cover" />
+                  </div>
+                  <div className="p-8 flex flex-col flex-1">
+                    <h3 className="text-lg font-medium mb-3">{story.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed flex-1">{story.excerpt}</p>
+                    <Link to="/stories" className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-accent hover:text-primary transition-colors">
+                      Read More <ArrowRight size={16} />
+                    </Link>
+                  </div>
                 </div>
               </FadeIn>
             ))}
