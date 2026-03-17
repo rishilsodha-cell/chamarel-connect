@@ -47,7 +47,7 @@ const needs = [
     image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400",
     bg: "bg-purple-100",
     cta: "Find Out More",
-    path: "/your-needs/mental-health",
+    path: "/#get-in-touch",
     body: `Our mental health support services are designed for adults with complex mental health needs who require more than clinical intervention — they need consistency, compassion, and a team that truly understands their journey.
 
 We embed trauma-informed practice and Positive Behaviour Support (PBS) into every care plan, creating psychologically safe environments where people feel heard, respected, and empowered to recover.`,
