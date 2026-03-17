@@ -11,6 +11,8 @@ import Referrals from "./pages/Referrals.tsx";
 import Careers from "./pages/Careers.tsx";
 import Privacy from "./pages/Privacy.tsx";
 import CommunityCare from "./pages/CommunityCare.tsx";
+import Gallery from "./pages/Gallery.tsx";
+import Stories from "./pages/Stories.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
