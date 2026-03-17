@@ -59,7 +59,7 @@ const Navbar = () => {
 
         {/* Desktop nav */}
         <nav className="hidden xl:flex items-center gap-6">
-          {navLinks.map((link) => (
+          {desktopLinks.map((link) => (
             <Link
               key={link.path}
               to={link.path}
@@ -98,19 +98,20 @@ const Navbar = () => {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.25, ease: [0.4, 0, 0.2, 1] }}
-            className="xl:hidden overflow-hidden bg-background border-b border-border/50"
+            className="xl:hidden overflow-hidden bg-white"
           >
-            <div className="container-narrow py-4 flex flex-col gap-3">
-              {navLinks.map((link) => (
+            <div className="flex flex-col">
+              {mobileLinks.map((link, i) => (
                 <Link
                   key={link.path}
                   to={link.path}
                   onClick={() => handleClick(link.path)}
-                  className={`text-sm font-medium tracking-wide uppercase py-2 ${
-                    isActive(link.path)
-                      ? "text-primary"
-                      : "text-foreground/70"
-                  }`}
+                  className="text-lg font-medium py-4 px-6"
+                  style={{
+                    color: "#2D2D2D",
+                    borderLeft: "3px solid #00706B",
+                    borderBottom: i < mobileLinks.length - 1 ? "1px solid #EEEEEE" : "none",
+                  }}
                 >
                   {link.label}
                 </Link>
