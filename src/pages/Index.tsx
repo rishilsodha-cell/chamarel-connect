@@ -9,6 +9,7 @@ import FadeIn from "@/components/FadeIn";
 import InstagramGrid from "@/components/InstagramGrid";
 import OurHome from "@/components/OurHome";
 import YourNeedsSection from "@/components/YourNeedsSection";
+import AreasWeServe from "@/components/AreasWeServe";
 import heroImage from "@/assets/hero-care.jpg";
 import gardenPartyImg from "@/assets/photos/garden-party.png";
 import cafeOutingImg from "@/assets/photos/cafe-outing.png";
@@ -229,6 +230,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Areas We Serve */}
+      <AreasWeServe slim />
     </Layout>
   );
 };
