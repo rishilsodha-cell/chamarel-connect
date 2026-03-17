@@ -48,9 +48,9 @@ const CommunityCarePage = () => (
             <Link to="/referrals" className="px-8 py-4 bg-primary-foreground text-primary rounded-full font-semibold hover:-translate-y-0.5 transition-all duration-250 hover:shadow-lg">
               Make a Referral
             </Link>
-            <Link to="/#contact" className="px-8 py-4 bg-transparent border-2 border-primary-foreground text-primary-foreground rounded-full font-semibold hover:-translate-y-0.5 transition-all duration-250 hover:bg-primary-foreground/10">
+            <a href="/#get-in-touch" className="px-8 py-4 bg-transparent border-2 border-primary-foreground text-primary-foreground rounded-full font-semibold hover:-translate-y-0.5 transition-all duration-250 hover:bg-primary-foreground/10">
               Contact Us
-            </Link>
+            </a>
           </div>
         </FadeIn>
       </div>

@@ -11,7 +11,7 @@ const needs = [
     image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400",
     bg: "bg-accent/20",
     cta: "Find Out More",
-    path: "/your-needs/autism",
+    path: "/#get-in-touch",
     body: "At Chamarel Healthcare, we understand that every autistic person experiences the world differently. Our specialist autism support is built around each individual's unique communication style, sensory preferences, and personal strengths — never a one-size-fits-all approach.",
     bullets: [
       "Structured daily routines that create predictability, safety, and confidence",
@@ -29,7 +29,7 @@ const needs = [
     image: "https://images.unsplash.com/photo-1531983412531-1f49a365ffed?w=400",
     bg: "bg-amber-100",
     cta: "Find Out More",
-    path: "/your-needs/learning-disabilities",
+    path: "/#get-in-touch",
     body: "We provide specialist, values-led support for adults with mild, moderate, and profound learning disabilities. Our approach is rooted in Positive Behaviour Support (PBS) and person-centred planning — ensuring every individual is at the heart of decisions about their own life.",
     bullets: [
       "Fully co-produced care plans developed with the individual, their family, and professional network",
@@ -47,7 +47,7 @@ const needs = [
     image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400",
     bg: "bg-purple-100",
     cta: "Find Out More",
-    path: "/your-needs/mental-health",
+    path: "/#get-in-touch",
     body: `Our mental health support services are designed for adults with complex mental health needs who require more than clinical intervention — they need consistency, compassion, and a team that truly understands their journey.
 
 We embed trauma-informed practice and Positive Behaviour Support (PBS) into every care plan, creating psychologically safe environments where people feel heard, respected, and empowered to recover.`,
@@ -136,12 +136,12 @@ const YourNeedsSection = ({ homepage = false }: Props) => (
                     </>
                   )}
 
-                  <Link
-                    to={need.path}
+                  <a
+                    href={need.path}
                     className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-full font-semibold text-sm hover:-translate-y-0.5 transition-all duration-250 hover:shadow-lg"
                   >
                     {need.cta} <ArrowRight size={16} />
-                  </Link>
+                  </a>
                 </div>
               </FadeIn>
             </div>

@@ -46,9 +46,9 @@ const AreasWeServe = ({ slim = false }: Props) => (
       <FadeIn delay={0.2}>
         <p className="text-center text-muted-foreground italic text-sm mt-8">
           Don't see your area?{" "}
-          <Link to="/#contact" className="underline" style={{ color: "#00706B" }}>
+          <a href="/#get-in-touch" className="underline" style={{ color: "#00706B" }}>
             Contact us
-          </Link>
+          </a>
           {" "}— we may still be able to help.
         </p>
       </FadeIn>

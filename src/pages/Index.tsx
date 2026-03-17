@@ -182,7 +182,7 @@ const Index = () => {
       <InstagramGrid />
 
       {/* Contact */}
-      <section className="section-padding bg-secondary" id="contact">
+      <section className="section-padding bg-secondary" id="get-in-touch">
         <div className="container-narrow">
           <FadeIn>
             <h2 className="text-3xl md:text-4xl font-medium text-center mb-12">Get In Touch</h2>

@@ -13,7 +13,7 @@ const mobileLinks = [
   { label: "Community Care Services", path: "/community-care-services" },
   { label: "Make a Referral", path: "/referral" },
   { label: "Careers", path: "/careers" },
-  { label: "Contact Us", path: "/#contact" },
+  { label: "Contact Us", path: "/#get-in-touch" },
 ];
 
 const desktopLinks = [
@@ -25,7 +25,7 @@ const desktopLinks = [
   { label: "Gallery", path: "/gallery" },
   { label: "Stories", path: "/stories" },
   { label: "Careers", path: "/careers" },
-  { label: "Contact", path: "/#contact" },
+  { label: "Contact", path: "/#get-in-touch" },
 ];
 
 const Navbar = () => {
@@ -39,11 +39,6 @@ const Navbar = () => {
 
   const handleClick = (path: string) => {
     setOpen(false);
-    if (path === "/#contact") {
-      if (location.pathname === "/") {
-        document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
-      }
-    }
   };
 
   return (
@@ -59,25 +54,30 @@ const Navbar = () => {
 
         {/* Desktop nav */}
         <nav className="hidden lg:flex items-center gap-2.5">
-          {desktopLinks.map((link) => (
-            <Link
-              key={link.path}
-              to={link.path}
-              onClick={() => handleClick(link.path)}
-              className={`text-[12px] font-medium tracking-normal uppercase transition-opacity duration-200 relative group whitespace-nowrap ${
-                isActive(link.path)
-                  ? "text-primary opacity-100"
-                  : "text-foreground/70 hover:text-foreground hover:opacity-100"
-              }`}
-            >
-              {link.label}
-              <span
-                className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-transform duration-200 origin-left ${
-                  isActive(link.path) ? "w-full scale-x-100" : "w-full scale-x-0 group-hover:scale-x-100"
+          {desktopLinks.map((link) => {
+            const isHash = link.path.startsWith("/#");
+            const Tag = isHash ? "a" : Link;
+            const linkProps = isHash ? { href: link.path } : { to: link.path };
+            return (
+              <Tag
+                key={link.path}
+                {...(linkProps as any)}
+                onClick={() => handleClick(link.path)}
+                className={`text-[12px] font-medium tracking-normal uppercase transition-opacity duration-200 relative group whitespace-nowrap ${
+                  isActive(link.path)
+                    ? "text-primary opacity-100"
+                    : "text-foreground/70 hover:text-foreground hover:opacity-100"
                 }`}
-              />
-            </Link>
-          ))}
+              >
+                {link.label}
+                <span
+                  className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-transform duration-200 origin-left ${
+                    isActive(link.path) ? "w-full scale-x-100" : "w-full scale-x-0 group-hover:scale-x-100"
+                  }`}
+                />
+              </Tag>
+            );
+          })}
         </nav>
 
         {/* Mobile toggle */}
@@ -101,21 +101,26 @@ const Navbar = () => {
             className="lg:hidden overflow-hidden bg-white"
           >
             <div className="flex flex-col">
-              {mobileLinks.map((link, i) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  onClick={() => handleClick(link.path)}
-                  className="text-lg font-medium py-4 px-6"
-                  style={{
-                    color: "#2D2D2D",
-                    borderLeft: "3px solid #00706B",
-                    borderBottom: i < mobileLinks.length - 1 ? "1px solid #EEEEEE" : "none",
-                  }}
-                >
-                  {link.label}
-                </Link>
-              ))}
+              {mobileLinks.map((link, i) => {
+                const isHash = link.path.startsWith("/#");
+                const Tag = isHash ? "a" : Link;
+                const linkProps = isHash ? { href: link.path } : { to: link.path };
+                return (
+                  <Tag
+                    key={link.path}
+                    {...(linkProps as any)}
+                    onClick={() => handleClick(link.path)}
+                    className="text-lg font-medium py-4 px-6"
+                    style={{
+                      color: "#2D2D2D",
+                      borderLeft: "3px solid #00706B",
+                      borderBottom: i < mobileLinks.length - 1 ? "1px solid #EEEEEE" : "none",
+                    }}
+                  >
+                    {link.label}
+                  </Tag>
+                );
+              })}
             </div>
           </motion.nav>
         )}
