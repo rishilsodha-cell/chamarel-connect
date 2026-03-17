@@ -230,6 +230,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Areas We Serve */}
+      <AreasWeServe slim />
     </Layout>
   );
 };

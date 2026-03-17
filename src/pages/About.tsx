@@ -154,6 +154,8 @@ const About = () => (
         </div>
       </div>
     </section>
+
+    <AreasWeServe />
   </Layout>
 );
 
