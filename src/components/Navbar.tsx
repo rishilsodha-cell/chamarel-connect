@@ -3,7 +3,20 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const navLinks = [
+const mobileLinks = [
+  { label: "Home", path: "/" },
+  { label: "Your Needs", path: "/your-needs" },
+  { label: "Your Support", path: "/your-support" },
+  { label: "Life at Chamarel", path: "/gallery" },
+  { label: "Stories", path: "/stories" },
+  { label: "About Us", path: "/about" },
+  { label: "Community Care Services", path: "/community-care-services" },
+  { label: "Make a Referral", path: "/referrals" },
+  { label: "Careers", path: "/careers" },
+  { label: "Contact Us", path: "/#contact" },
+];
+
+const desktopLinks = [
   { label: "Your Needs", path: "/your-needs" },
   { label: "Your Support", path: "/your-support" },
   { label: "Community Care Services", path: "/community-care-services" },
