@@ -7,6 +7,7 @@ import { toast } from "sonner";
 import Layout from "@/components/Layout";
 import FadeIn from "@/components/FadeIn";
 import InstagramGrid from "@/components/InstagramGrid";
+import OurHome from "@/components/OurHome";
 import heroImage from "@/assets/hero-care.jpg";
 import gardenPartyImg from "@/assets/photos/garden-party.png";
 import cafeOutingImg from "@/assets/photos/cafe-outing.png";
