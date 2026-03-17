@@ -8,6 +8,8 @@ const navLinks = [
   { label: "Your Support", path: "/your-support" },
   { label: "Make a Referral", path: "/referrals" },
   { label: "About Us", path: "/about" },
+  { label: "Life at Chamarel", path: "/gallery" },
+  { label: "Stories", path: "/stories" },
   { label: "Careers", path: "/careers" },
   { label: "Contact Us", path: "/#contact" },
 ];

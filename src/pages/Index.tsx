@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ShieldCheck, BadgeCheck, Heart, UtensilsCrossed, Linkedin, Facebook, Instagram, Mail, Brain, Puzzle, HeartPulse, Activity, Sparkles, ArrowRight } from "lucide-react";
+import { ShieldCheck, BadgeCheck, Heart, UtensilsCrossed, Linkedin, Facebook, Instagram, Mail, Brain, Puzzle, HeartPulse, Activity, Sparkles, ArrowRight, Camera } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -23,6 +23,17 @@ const needs = [
   { icon: HeartPulse, title: "Mental Health", path: "/your-needs" },
   { icon: Activity, title: "Complex & Enhanced Care", path: "/your-needs" },
   { icon: Sparkles, title: "Brain Injury Rehabilitation", path: "/your-needs" },
+];
+
+const moments = [
+  { caption: "Garden walk with support worker", hue: "bg-primary/10" },
+  { caption: "Art therapy afternoon", hue: "bg-accent/10" },
+  { caption: "Cooking together", hue: "bg-secondary" },
+  { caption: "Community day trip", hue: "bg-primary/8" },
+  { caption: "Celebrating milestones", hue: "bg-accent/12" },
+  { caption: "Enjoying the sunshine", hue: "bg-primary/12" },
+  { caption: "Music session", hue: "bg-secondary" },
+  { caption: "Seaside holiday", hue: "bg-accent/10" },
 ];
 
 const stats = [
@@ -78,16 +89,10 @@ const Index = () => {
           </FadeIn>
           <FadeIn delay={0.3}>
             <div className="flex flex-wrap gap-4 mt-10">
-              <Link
-                to="/your-needs"
-                className="px-8 py-4 bg-primary-foreground text-primary rounded-full font-semibold hover:-translate-y-0.5 transition-all duration-250 hover:shadow-lg"
-              >
+              <Link to="/your-needs" className="px-8 py-4 bg-primary-foreground text-primary rounded-full font-semibold hover:-translate-y-0.5 transition-all duration-250 hover:shadow-lg">
                 Explore Our Services
               </Link>
-              <Link
-                to="/referrals"
-                className="px-8 py-4 bg-transparent border-2 border-primary-foreground text-primary-foreground rounded-full font-semibold hover:-translate-y-0.5 transition-all duration-250 hover:bg-primary-foreground/10"
-              >
+              <Link to="/referrals" className="px-8 py-4 bg-transparent border-2 border-primary-foreground text-primary-foreground rounded-full font-semibold hover:-translate-y-0.5 transition-all duration-250 hover:bg-primary-foreground/10">
                 Make a Referral
               </Link>
             </div>
@@ -107,11 +112,7 @@ const Index = () => {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
             {needs.map((need, i) => (
               <FadeIn key={i} delay={i * 0.05}>
-                <Link
-                  to={need.path}
-                  className="flex flex-col items-center text-center gap-4 p-6 md:p-8 bg-card rounded-2xl transition-all duration-200 hover:-translate-y-1 group"
-                  style={{ boxShadow: "var(--card-shadow)" }}
-                >
+                <Link to={need.path} className="flex flex-col items-center text-center gap-4 p-6 md:p-8 bg-card rounded-2xl transition-all duration-200 hover:-translate-y-1 group" style={{ boxShadow: "var(--card-shadow)" }}>
                   <div className="p-4 rounded-2xl bg-secondary transition-colors group-hover:bg-accent/10">
                     <need.icon size={28} strokeWidth={1.5} className="text-accent" />
                   </div>
@@ -121,6 +122,32 @@ const Index = () => {
             ))}
           </div>
         </div>
+      </section>
+
+      {/* Moments That Matter — Photo Strip */}
+      <section className="py-16">
+        <div className="container-narrow mb-8">
+          <FadeIn>
+            <h2 className="text-3xl md:text-4xl font-medium text-center mb-2">Moments That Matter</h2>
+            <p className="text-center text-muted-foreground text-sm">
+              Every day, our teams create moments of joy, independence, and connection.
+            </p>
+          </FadeIn>
+        </div>
+        <FadeIn delay={0.1}>
+          <div className="overflow-x-auto pb-4 px-5">
+            <div className="flex gap-4" style={{ width: "max-content" }}>
+              {moments.map((m, i) => (
+                <div key={i} className="w-56 flex-shrink-0">
+                  <div className={`${m.hue} aspect-[4/5] rounded-2xl flex items-center justify-center mb-2`}>
+                    <Camera className="w-8 h-8 text-muted-foreground/25" strokeWidth={1.5} />
+                  </div>
+                  <p className="text-xs text-muted-foreground text-center">{m.caption}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </FadeIn>
       </section>
 
       {/* Quality Stats */}
@@ -151,9 +178,9 @@ const Index = () => {
                 <div className="p-8 bg-card rounded-2xl h-full flex flex-col" style={{ boxShadow: "var(--card-shadow)" }}>
                   <h3 className="text-lg font-medium mb-3">{story.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed flex-1">{story.excerpt}</p>
-                  <button className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-accent hover:text-primary transition-colors">
+                  <Link to="/stories" className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-accent hover:text-primary transition-colors">
                     Read More <ArrowRight size={16} />
-                  </button>
+                  </Link>
                 </div>
               </FadeIn>
             ))}
