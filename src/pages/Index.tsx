@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ShieldCheck, BadgeCheck, Heart, UtensilsCrossed, Linkedin, Facebook, Instagram, Mail, ArrowRight, Camera } from "lucide-react";
+import { Linkedin, Facebook, Instagram, Mail, ArrowRight, Camera } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -45,13 +45,6 @@ const stories = [
   { title: "Empowering independence", excerpt: "How we helped James build confidence and develop daily living skills in his supported living setting." },
   { title: "A journey to confidence", excerpt: "Sarah's story of recovery through trauma-informed mental health support and community engagement." },
   { title: "Thriving in the community", excerpt: "Mark's progression from intensive support to independent living with our dedicated care team." },
-];
-
-const trustBadges = [
-  { icon: ShieldCheck, label: "CQC Rated Good" },
-  { icon: BadgeCheck, label: "Staff Verified" },
-  { icon: Heart, label: "National Living Wage" },
-  { icon: UtensilsCrossed, label: "Food Hygiene Rating" },
 ];
 
 const Index = () => {
@@ -184,24 +177,6 @@ const Index = () => {
               </FadeIn>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Trust Badges */}
-      <section className="section-padding">
-        <div className="container-narrow">
-          <FadeIn>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              {trustBadges.map((badge, i) => (
-                <div key={i} className="flex flex-col items-center text-center gap-3 group">
-                  <div className="p-4 rounded-2xl bg-secondary transition-colors duration-200 group-hover:bg-secondary/70">
-                    <badge.icon size={32} strokeWidth={1.5} className="text-accent" />
-                  </div>
-                  <span className="text-sm font-medium text-foreground/80">{badge.label}</span>
-                </div>
-              ))}
-            </div>
-          </FadeIn>
         </div>
       </section>
 
