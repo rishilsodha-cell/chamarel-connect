@@ -19,13 +19,13 @@ const mobileLinks = [
 const desktopLinks = [
   { label: "Your Needs", path: "/your-needs" },
   { label: "Your Support", path: "/your-support" },
-  { label: "Community Care Services", path: "/community-care-services" },
-  { label: "Make a Referral", path: "/referral" },
+  { label: "Community Care", path: "/community-care-services" },
+  { label: "Referral", path: "/referral" },
   { label: "About Us", path: "/about" },
-  { label: "Life at Chamarel", path: "/gallery" },
+  { label: "Gallery", path: "/gallery" },
   { label: "Stories", path: "/stories" },
   { label: "Careers", path: "/careers" },
-  { label: "Contact Us", path: "/#contact" },
+  { label: "Contact", path: "/#contact" },
 ];
 
 const Navbar = () => {
@@ -49,8 +49,8 @@ const Navbar = () => {
   return (
     <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
       <div className="container-narrow flex items-center justify-between h-16 md:h-20">
-        <Link to="/" className="flex flex-col">
-          <div className="text-lg md:text-[22px] leading-tight">
+        <Link to="/" className="flex flex-col flex-shrink-0">
+          <div className="text-[18px] leading-tight">
             <span className="font-bold" style={{ color: "#00706B" }}>Chamarel</span>{" "}
             <span className="font-normal" style={{ color: "#2D2D2D" }}>Healthcare</span>
           </div>
@@ -58,13 +58,13 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden xl:flex items-center gap-6">
+        <nav className="hidden lg:flex items-center gap-2.5">
           {desktopLinks.map((link) => (
             <Link
               key={link.path}
               to={link.path}
               onClick={() => handleClick(link.path)}
-              className={`text-xs font-medium tracking-wide uppercase transition-opacity duration-200 relative group ${
+              className={`text-[12px] font-medium tracking-normal uppercase transition-opacity duration-200 relative group whitespace-nowrap ${
                 isActive(link.path)
                   ? "text-primary opacity-100"
                   : "text-foreground/70 hover:text-foreground hover:opacity-100"
@@ -83,7 +83,7 @@ const Navbar = () => {
         {/* Mobile toggle */}
         <button
           onClick={() => setOpen(!open)}
-          className="xl:hidden p-2 text-foreground"
+          className="lg:hidden p-2 text-foreground"
           aria-label="Toggle menu"
         >
           {open ? <X size={24} strokeWidth={1.5} /> : <Menu size={24} strokeWidth={1.5} />}
@@ -98,7 +98,7 @@ const Navbar = () => {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.25, ease: [0.4, 0, 0.2, 1] }}
-            className="xl:hidden overflow-hidden bg-white"
+            className="lg:hidden overflow-hidden bg-white"
           >
             <div className="flex flex-col">
               {mobileLinks.map((link, i) => (
