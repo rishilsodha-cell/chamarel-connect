@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const navLinks = [
   { label: "Your Needs", path: "/your-needs" },
   { label: "Your Support", path: "/your-support" },
+  { label: "Community Care Services", path: "/community-care-services" },
   { label: "Make a Referral", path: "/referrals" },
   { label: "About Us", path: "/about" },
   { label: "Life at Chamarel", path: "/gallery" },

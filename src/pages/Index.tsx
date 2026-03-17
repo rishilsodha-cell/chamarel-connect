@@ -93,28 +93,15 @@ const Index = () => {
       </section>
 
       {/* Your Needs */}
-      <section className="section-padding">
-        <div className="container-narrow">
-          <FadeIn>
-            <h2 className="text-3xl md:text-4xl font-medium text-center mb-4">Your Needs</h2>
-            <p className="text-center text-foreground/70 max-w-2xl mx-auto mb-12">
-              We provide tailored care for people with learning disabilities, autism, and mental health needs.
-            </p>
-          </FadeIn>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-3xl mx-auto">
-            {needs.map((need, i) => (
-              <FadeIn key={i} delay={i * 0.08}>
-                <Link to={need.path} className="flex flex-col items-center text-center gap-5 group">
-                  <div className={`${need.bg} w-40 h-40 rounded-full overflow-hidden transition-transform duration-300 group-hover:scale-105`}>
-                    <img src={need.image} alt={need.title} className="w-full h-full object-cover" />
-                  </div>
-                  <span className="text-lg font-semibold text-foreground">{need.title}</span>
-                </Link>
-              </FadeIn>
-            ))}
-          </div>
+      <FadeIn>
+        <div className="container-narrow pt-16 md:pt-20">
+          <h2 className="text-3xl md:text-4xl font-medium text-center mb-4">Your Needs</h2>
+          <p className="text-center text-foreground/70 max-w-2xl mx-auto">
+            We provide tailored care for people with learning disabilities, autism, and mental health needs.
+          </p>
         </div>
-      </section>
+      </FadeIn>
+      <YourNeedsSection homepage />
 
       {/* Our Home */}
       <OurHome />
