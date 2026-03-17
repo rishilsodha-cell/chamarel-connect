@@ -5,8 +5,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
 import About from "./pages/About.tsx";
-import Services from "./pages/Services.tsx";
-import WhyWorkWithUs from "./pages/WhyWorkWithUs.tsx";
+import YourNeeds from "./pages/YourNeeds.tsx";
+import YourSupport from "./pages/YourSupport.tsx";
 import Referrals from "./pages/Referrals.tsx";
 import Careers from "./pages/Careers.tsx";
 import Privacy from "./pages/Privacy.tsx";
@@ -23,8 +23,8 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/why-work-with-us" element={<WhyWorkWithUs />} />
+          <Route path="/your-needs" element={<YourNeeds />} />
+          <Route path="/your-support" element={<YourSupport />} />
           <Route path="/referrals" element={<Referrals />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/privacy" element={<Privacy />} />

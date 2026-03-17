@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ShieldCheck, BadgeCheck, Heart, UtensilsCrossed, Linkedin, Facebook, Instagram, Mail } from "lucide-react";
+import { ShieldCheck, BadgeCheck, Heart, UtensilsCrossed, Linkedin, Facebook, Instagram, Mail, Brain, Puzzle, HeartPulse, Activity, Sparkles, ArrowRight } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -17,10 +17,30 @@ const contactSchema = z.object({
 
 type ContactForm = z.infer<typeof contactSchema>;
 
+const needs = [
+  { icon: Puzzle, title: "Autism", path: "/your-needs" },
+  { icon: Brain, title: "Learning Disabilities", path: "/your-needs" },
+  { icon: HeartPulse, title: "Mental Health", path: "/your-needs" },
+  { icon: Activity, title: "Complex & Enhanced Care", path: "/your-needs" },
+  { icon: Sparkles, title: "Brain Injury Rehabilitation", path: "/your-needs" },
+];
+
+const stats = [
+  { label: "CQC Inspected & Rated Good", value: "CQC" },
+  { label: "Trauma-Informed Practice", value: "TIP" },
+  { label: "Person-Centred at Every Step", value: "PCS" },
+];
+
+const stories = [
+  { title: "Empowering independence", excerpt: "How we helped James build confidence and develop daily living skills in his supported living setting." },
+  { title: "A journey to confidence", excerpt: "Sarah's story of recovery through trauma-informed mental health support and community engagement." },
+  { title: "Thriving in the community", excerpt: "Mark's progression from intensive support to independent living with our specialist care team." },
+];
+
 const trustBadges = [
-  { icon: ShieldCheck, label: "CQC Inspected & Rated Good" },
+  { icon: ShieldCheck, label: "CQC Rated Good" },
   { icon: BadgeCheck, label: "Staff Verified" },
-  { icon: Heart, label: "Living Wage Foundation" },
+  { icon: Heart, label: "National Living Wage" },
   { icon: UtensilsCrossed, label: "Food Hygiene Rating" },
 ];
 
@@ -35,52 +55,109 @@ const Index = () => {
     reset();
   };
 
+  const inputClass = "w-full bg-card border-0 ring-1 ring-primary/10 focus:ring-2 focus:ring-primary transition-all p-4 rounded-xl text-sm outline-none";
+
   return (
     <Layout>
       {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
           <img src={heroImage} alt="Caregiver supporting a person at home" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-primary/70" />
+          <div className="absolute inset-0 bg-primary/75" />
         </div>
-        <div className="relative container-narrow section-padding py-28 md:py-40">
+        <div className="relative container-narrow py-28 md:py-40 lg:py-48">
           <FadeIn>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight leading-tight max-w-3xl text-primary-foreground">
-              Professional Care & Support Delivered At Home & In The Community
+              Specialist Care & Support for People with Complex Needs
             </h1>
           </FadeIn>
           <FadeIn delay={0.15}>
-            <p className="mt-6 text-lg text-primary-foreground/80 max-w-xl">
-              Specialized domiciliary care for mental health and learning disabilities.
+            <p className="mt-6 text-lg md:text-xl text-primary-foreground/85 max-w-2xl leading-relaxed">
+              At Chamarel Healthcare, we provide compassionate, person-centred care for adults with learning disabilities, autism, mental health needs, and complex conditions — delivered in London and the surrounding community.
             </p>
           </FadeIn>
           <FadeIn delay={0.3}>
-            <Link
-              to="/services"
-              className="inline-block mt-8 px-8 py-4 bg-primary-foreground text-primary rounded-full font-semibold hover:-translate-y-0.5 transition-all duration-250 hover:shadow-lg"
-            >
-              Learn More
-            </Link>
+            <div className="flex flex-wrap gap-4 mt-10">
+              <Link
+                to="/your-needs"
+                className="px-8 py-4 bg-primary-foreground text-primary rounded-full font-semibold hover:-translate-y-0.5 transition-all duration-250 hover:shadow-lg"
+              >
+                Explore Our Services
+              </Link>
+              <Link
+                to="/referrals"
+                className="px-8 py-4 bg-transparent border-2 border-primary-foreground text-primary-foreground rounded-full font-semibold hover:-translate-y-0.5 transition-all duration-250 hover:bg-primary-foreground/10"
+              >
+                Make a Referral
+              </Link>
+            </div>
           </FadeIn>
         </div>
       </section>
 
-      {/* Mission */}
-      <section className="section-padding bg-secondary">
-        <div className="container-narrow max-w-[65ch] mx-auto text-center">
+      {/* Your Needs */}
+      <section className="section-padding">
+        <div className="container-narrow">
           <FadeIn>
-            <h2 className="text-3xl md:text-4xl font-medium text-foreground">
-              Exceptional Care, Tailored to You
-            </h2>
-          </FadeIn>
-          <FadeIn delay={0.1}>
-            <p className="mt-8 text-lg leading-relaxed text-foreground/90">
-              At Chamarel Healthcare, our mission is to deliver exceptional domiciliary and community-based care that empowers adults with mental health needs, learning disabilities, and complex support requirements to live confidently, safely, and independently in their own homes and communities. We are rooted in values-based practice, where{" "}
-              <span className="font-medium text-primary">compassion, dignity, and emotional intelligence</span>{" "}
-              guide every interaction. Our support is trauma-informed, recognising the impact of past experiences and creating safe, nurturing environments that promote healing and trust. Through{" "}
-              <span className="font-medium text-primary">Positive Behaviour Support (PBS)</span>, we focus on proactive, person-centred strategies that reduce distress and enhance quality of life — enabling individuals to thrive, not just survive.
+            <h2 className="text-3xl md:text-4xl font-medium text-center mb-4">Your Needs</h2>
+            <p className="text-center text-foreground/70 max-w-2xl mx-auto mb-12">
+              We provide specialist care tailored to a range of complex needs.
             </p>
           </FadeIn>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
+            {needs.map((need, i) => (
+              <FadeIn key={i} delay={i * 0.05}>
+                <Link
+                  to={need.path}
+                  className="flex flex-col items-center text-center gap-4 p-6 md:p-8 bg-card rounded-2xl transition-all duration-200 hover:-translate-y-1 group"
+                  style={{ boxShadow: "var(--card-shadow)" }}
+                >
+                  <div className="p-4 rounded-2xl bg-secondary transition-colors group-hover:bg-accent/10">
+                    <need.icon size={28} strokeWidth={1.5} className="text-accent" />
+                  </div>
+                  <span className="text-sm font-medium text-foreground/90">{need.title}</span>
+                </Link>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Quality Stats */}
+      <section className="bg-primary text-primary-foreground py-16">
+        <div className="container-narrow">
+          <div className="grid md:grid-cols-3 gap-8 text-center">
+            {stats.map((stat, i) => (
+              <FadeIn key={i} delay={i * 0.1}>
+                <div>
+                  <div className="text-3xl font-semibold mb-2 text-accent">{stat.value}</div>
+                  <div className="text-sm text-primary-foreground/80 font-medium uppercase tracking-wide">{stat.label}</div>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Success Stories */}
+      <section className="section-padding bg-secondary">
+        <div className="container-narrow">
+          <FadeIn>
+            <h2 className="text-3xl md:text-4xl font-medium text-center mb-12">Success Stories</h2>
+          </FadeIn>
+          <div className="grid md:grid-cols-3 gap-6">
+            {stories.map((story, i) => (
+              <FadeIn key={i} delay={i * 0.1}>
+                <div className="p-8 bg-card rounded-2xl h-full flex flex-col" style={{ boxShadow: "var(--card-shadow)" }}>
+                  <h3 className="text-lg font-medium mb-3">{story.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed flex-1">{story.excerpt}</p>
+                  <button className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-accent hover:text-primary transition-colors">
+                    Read More <ArrowRight size={16} />
+                  </button>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -127,43 +204,23 @@ const Index = () => {
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <input
-                      {...register("firstName")}
-                      placeholder="First Name"
-                      className="w-full bg-card border-0 ring-1 ring-primary/10 focus:ring-2 focus:ring-primary transition-all p-4 rounded-xl text-sm outline-none"
-                    />
+                    <input {...register("firstName")} placeholder="First Name" className={inputClass} />
                     {errors.firstName && <p className="text-destructive text-xs mt-1">{errors.firstName.message}</p>}
                   </div>
                   <div>
-                    <input
-                      {...register("lastName")}
-                      placeholder="Last Name"
-                      className="w-full bg-card border-0 ring-1 ring-primary/10 focus:ring-2 focus:ring-primary transition-all p-4 rounded-xl text-sm outline-none"
-                    />
+                    <input {...register("lastName")} placeholder="Last Name" className={inputClass} />
                     {errors.lastName && <p className="text-destructive text-xs mt-1">{errors.lastName.message}</p>}
                   </div>
                 </div>
                 <div>
-                  <input
-                    {...register("email")}
-                    placeholder="Email"
-                    className="w-full bg-card border-0 ring-1 ring-primary/10 focus:ring-2 focus:ring-primary transition-all p-4 rounded-xl text-sm outline-none"
-                  />
+                  <input {...register("email")} placeholder="Email" className={inputClass} />
                   {errors.email && <p className="text-destructive text-xs mt-1">{errors.email.message}</p>}
                 </div>
                 <div>
-                  <textarea
-                    {...register("message")}
-                    placeholder="Message"
-                    rows={4}
-                    className="w-full bg-card border-0 ring-1 ring-primary/10 focus:ring-2 focus:ring-primary transition-all p-4 rounded-xl text-sm outline-none resize-none"
-                  />
+                  <textarea {...register("message")} placeholder="Message" rows={4} className={inputClass + " resize-none"} />
                   {errors.message && <p className="text-destructive text-xs mt-1">{errors.message.message}</p>}
                 </div>
-                <button
-                  type="submit"
-                  className="w-full md:w-auto px-8 py-4 bg-primary text-primary-foreground rounded-full font-semibold hover:-translate-y-0.5 transition-all duration-250 hover:shadow-lg"
-                >
+                <button type="submit" className="w-full md:w-auto px-8 py-4 bg-primary text-primary-foreground rounded-full font-semibold hover:-translate-y-0.5 transition-all duration-250 hover:shadow-lg">
                   Send Message
                 </button>
               </form>

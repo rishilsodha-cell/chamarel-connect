@@ -8,15 +8,16 @@ const Footer = () => (
         <div>
           <h3 className="text-lg font-semibold mb-4">Chamarel Healthcare</h3>
           <p className="text-primary-foreground/70 text-sm leading-relaxed">
-            Professional domiciliary and community care for adults with mental health needs, learning disabilities, and complex support requirements.
+            Specialist, values-led care and support for adults with learning disabilities, autism, mental health needs, and complex conditions across London.
           </p>
         </div>
         <div>
           <h4 className="text-sm font-semibold uppercase tracking-wide mb-4">Quick Links</h4>
           <ul className="space-y-2 text-sm text-primary-foreground/70">
-            <li><Link to="/referrals" className="hover:text-primary-foreground transition-colors">Contact</Link></li>
-            <li><Link to="/about" className="hover:text-primary-foreground transition-colors">Our Locations</Link></li>
+            <li><Link to="/about" className="hover:text-primary-foreground transition-colors">About Us</Link></li>
+            <li><Link to="/careers" className="hover:text-primary-foreground transition-colors">Careers</Link></li>
             <li><Link to="/privacy" className="hover:text-primary-foreground transition-colors">Privacy Policy</Link></li>
+            <li><Link to="/#contact" className="hover:text-primary-foreground transition-colors">Contact Us</Link></li>
           </ul>
         </div>
         <div>
@@ -35,7 +36,7 @@ const Footer = () => (
         </div>
       </div>
       <div className="border-t border-primary-foreground/10 mt-12 pt-8 text-center text-xs text-primary-foreground/50">
-        © 2025 by Chamarel Healthcare. All rights reserved.
+        © 2025 Chamarel Healthcare. All rights reserved.
       </div>
     </div>
   </footer>

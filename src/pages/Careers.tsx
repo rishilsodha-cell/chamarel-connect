@@ -5,7 +5,7 @@ import { Briefcase, GraduationCap, Heart, Clock } from "lucide-react";
 const perks = [
   { icon: Heart, title: "Values-Based Culture", desc: "Join a team that genuinely cares. We recruit for character and train for skill." },
   { icon: GraduationCap, title: "Training & Development", desc: "Comprehensive induction, ongoing CPD, and specialist training in PBS and trauma-informed care." },
-  { icon: Briefcase, title: "Competitive Pay", desc: "Living Wage accredited employer with competitive rates and transparent pay structures." },
+  { icon: Briefcase, title: "Competitive Pay", desc: "National Living Wage accredited employer with competitive rates and transparent pay structures." },
   { icon: Clock, title: "Flexible Working", desc: "We understand the importance of work-life balance and offer flexible shift patterns." },
 ];
 
@@ -14,17 +14,17 @@ const Careers = () => (
     <section className="section-padding">
       <div className="container-narrow max-w-3xl">
         <FadeIn>
-          <h1 className="text-4xl md:text-5xl font-medium tracking-tight">Careers at Chamarel</h1>
+          <h1 className="text-4xl md:text-5xl font-medium tracking-tight">Join the Chamarel Healthcare Team</h1>
         </FadeIn>
         <FadeIn delay={0.1}>
           <p className="mt-8 text-lg leading-relaxed text-foreground/80">
-            We're always looking for compassionate, dedicated individuals to join our team. If you share our values and want to make a meaningful difference in people's lives, we'd love to hear from you.
+            We're looking for compassionate, dedicated people to join our growing team. At Chamarel Healthcare, we invest in our staff through ongoing training in Positive Behaviour Support (PBS), trauma-informed care, and professional development. We are proud to be a National Living Wage employer.
           </p>
           <a
             href="mailto:enquiry@chamarelhealthcare.com?subject=Career%20Enquiry"
             className="inline-block mt-8 px-8 py-4 bg-primary text-primary-foreground rounded-full font-semibold hover:-translate-y-0.5 transition-all duration-250 hover:shadow-lg"
           >
-            Get In Touch
+            View Current Vacancies
           </a>
         </FadeIn>
       </div>

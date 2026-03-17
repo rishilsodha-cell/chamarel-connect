@@ -1,12 +1,12 @@
+import { Link } from "react-router-dom";
+import { Heart, Compass, Users } from "lucide-react";
 import Layout from "@/components/Layout";
 import FadeIn from "@/components/FadeIn";
-import { Heart, Users, Shield, Lightbulb } from "lucide-react";
 
-const values = [
-  { icon: Heart, title: "Compassion", desc: "Every interaction is guided by empathy and genuine care for the individuals we support." },
-  { icon: Users, title: "Person-Centred", desc: "We tailor our approach to each individual, respecting their unique needs, preferences, and goals." },
-  { icon: Shield, title: "Dignity & Respect", desc: "We uphold the dignity of every person, ensuring they feel valued and heard." },
-  { icon: Lightbulb, title: "Innovation", desc: "We embrace evidence-based practices and technology to deliver the highest quality of care." },
+const cards = [
+  { icon: Heart, title: "Our Values", desc: "Compassion, dignity, and emotional intelligence at the heart of everything we do." },
+  { icon: Compass, title: "Our Approach", desc: "Positive Behaviour Support and trauma-informed practice creating safe environments." },
+  { icon: Users, title: "Our Teams", desc: "Dedicated professionals invested in ongoing training and professional development." },
 ];
 
 const About = () => (
@@ -17,28 +17,32 @@ const About = () => (
           <h1 className="text-4xl md:text-5xl font-medium tracking-tight">About Chamarel Healthcare</h1>
         </FadeIn>
         <FadeIn delay={0.1}>
-          <p className="mt-8 text-lg leading-relaxed text-foreground/80">
-            Chamarel Healthcare is a London-based provider of specialist domiciliary and community care services. We support adults with mental health needs, learning disabilities, and complex requirements to live safely and independently in their own homes and communities.
-          </p>
-          <p className="mt-4 text-lg leading-relaxed text-foreground/80">
-            Our team of dedicated professionals delivers trauma-informed, values-based care rooted in Positive Behaviour Support (PBS). We believe everyone deserves to thrive — not just survive — and we work tirelessly to make that a reality.
-          </p>
+          <div className="mt-8 space-y-6 text-lg leading-relaxed text-foreground/80">
+            <p>
+              At Chamarel Healthcare, our purpose is simple: fulfilling lives for all. We provide specialist, values-led care and support for adults with learning disabilities, autism, mental health needs, and complex conditions across London and the wider community.
+            </p>
+            <p>
+              At the heart of everything we do is <span className="font-medium text-primary">Positive Behaviour Support (PBS)</span> and <span className="font-medium text-primary">trauma-informed practice</span> — creating safe, emotionally intelligent environments where people feel understood, valued, and empowered to shape their own lives.
+            </p>
+            <p>
+              We look beyond labels. We embrace each individual's unique strengths, goals, and aspirations — and we work tirelessly to ensure every person we support can live life as they choose, with dignity, connection, and joy.
+            </p>
+          </div>
         </FadeIn>
       </div>
     </section>
 
     <section className="section-padding bg-secondary">
       <div className="container-narrow">
-        <FadeIn>
-          <h2 className="text-3xl font-medium text-center mb-16">Our Values</h2>
-        </FadeIn>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {values.map((v, i) => (
+        <div className="grid sm:grid-cols-3 gap-6">
+          {cards.map((card, i) => (
             <FadeIn key={i} delay={i * 0.1}>
-              <div className="p-8 bg-card rounded-2xl transition-all duration-200 hover:bg-secondary/50" style={{ boxShadow: "var(--card-shadow)" }}>
-                <v.icon size={28} strokeWidth={1.5} className="text-accent mb-4" />
-                <h3 className="text-lg font-medium mb-2">{v.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{v.desc}</p>
+              <div className="p-8 bg-card rounded-2xl h-full text-center" style={{ boxShadow: "var(--card-shadow)" }}>
+                <div className="p-4 rounded-2xl bg-secondary w-fit mx-auto mb-5">
+                  <card.icon size={28} strokeWidth={1.5} className="text-accent" />
+                </div>
+                <h3 className="text-lg font-medium mb-2">{card.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{card.desc}</p>
               </div>
             </FadeIn>
           ))}
