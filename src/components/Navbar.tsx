@@ -3,7 +3,20 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const navLinks = [
+const mobileLinks = [
+  { label: "Home", path: "/" },
+  { label: "Your Needs", path: "/your-needs" },
+  { label: "Your Support", path: "/your-support" },
+  { label: "Life at Chamarel", path: "/gallery" },
+  { label: "Stories", path: "/stories" },
+  { label: "About Us", path: "/about" },
+  { label: "Community Care Services", path: "/community-care-services" },
+  { label: "Make a Referral", path: "/referrals" },
+  { label: "Careers", path: "/careers" },
+  { label: "Contact Us", path: "/#contact" },
+];
+
+const desktopLinks = [
   { label: "Your Needs", path: "/your-needs" },
   { label: "Your Support", path: "/your-support" },
   { label: "Community Care Services", path: "/community-care-services" },
@@ -46,7 +59,7 @@ const Navbar = () => {
 
         {/* Desktop nav */}
         <nav className="hidden xl:flex items-center gap-6">
-          {navLinks.map((link) => (
+          {desktopLinks.map((link) => (
             <Link
               key={link.path}
               to={link.path}
@@ -85,19 +98,20 @@ const Navbar = () => {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.25, ease: [0.4, 0, 0.2, 1] }}
-            className="xl:hidden overflow-hidden bg-background border-b border-border/50"
+            className="xl:hidden overflow-hidden bg-white"
           >
-            <div className="container-narrow py-4 flex flex-col gap-3">
-              {navLinks.map((link) => (
+            <div className="flex flex-col">
+              {mobileLinks.map((link, i) => (
                 <Link
                   key={link.path}
                   to={link.path}
                   onClick={() => handleClick(link.path)}
-                  className={`text-sm font-medium tracking-wide uppercase py-2 ${
-                    isActive(link.path)
-                      ? "text-primary"
-                      : "text-foreground/70"
-                  }`}
+                  className="text-lg font-medium py-4 px-6"
+                  style={{
+                    color: "#2D2D2D",
+                    borderLeft: "3px solid #00706B",
+                    borderBottom: i < mobileLinks.length - 1 ? "1px solid #EEEEEE" : "none",
+                  }}
                 >
                   {link.label}
                 </Link>
