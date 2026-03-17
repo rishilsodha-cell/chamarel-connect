@@ -180,24 +180,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Trust Badges */}
-      <section className="section-padding">
-        <div className="container-narrow">
-          <FadeIn>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              {trustBadges.map((badge, i) => (
-                <div key={i} className="flex flex-col items-center text-center gap-3 group">
-                  <div className="p-4 rounded-2xl bg-secondary transition-colors duration-200 group-hover:bg-secondary/70">
-                    <badge.icon size={32} strokeWidth={1.5} className="text-accent" />
-                  </div>
-                  <span className="text-sm font-medium text-foreground/80">{badge.label}</span>
-                </div>
-              ))}
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
       {/* Instagram Feed */}
       <InstagramGrid />
 
