@@ -18,7 +18,7 @@ const posts = [
 ];
 
 const InstagramGrid = () => (
-  <section className="section-padding bg-secondary">
+  <section className="section-padding" style={{ backgroundColor: "#FFFFFF" }}>
     <div className="container-narrow">
       <FadeIn>
         <h2 className="text-3xl md:text-4xl font-medium text-center mb-2">
