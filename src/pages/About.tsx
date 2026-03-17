@@ -1,4 +1,4 @@
-import { Heart, Compass, Users, Camera, Quote } from "lucide-react";
+import { Heart, Compass, Users, Camera, Quote, Facebook, ThumbsUp } from "lucide-react";
 import Layout from "@/components/Layout";
 import FadeIn from "@/components/FadeIn";
 
