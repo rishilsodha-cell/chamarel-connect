@@ -77,14 +77,12 @@ const YourSupport = () => (
           ))}
         </div>
         {/* Bottom row: 2 cards centred */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6 max-w-[calc(66.666%+12px)] mx-auto items-stretch lg:max-w-[calc(66.666%+12px)]" style={{ maxWidth: undefined }}>
-          <div className="sm:col-span-2 lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6 lg:max-w-[calc(66.666%+12px)] lg:mx-auto items-stretch">
-            {supports.slice(3).map((s, i) => (
-              <FadeIn key={i + 3} delay={(i + 3) * 0.08}>
-                <SupportCard {...s} />
-              </FadeIn>
-            ))}
-          </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6 lg:max-w-[66.666%] lg:mx-auto items-stretch">
+          {supports.slice(3).map((s, i) => (
+            <FadeIn key={i + 3} delay={(i + 3) * 0.08}>
+              <SupportCard {...s} />
+            </FadeIn>
+          ))}
         </div>
       </div>
     </section>
