@@ -195,10 +195,37 @@ const Index = () => {
                   <Mail size={18} strokeWidth={1.5} />
                   enquiry@chamarelhealthcare.com
                 </a>
-                <div className="flex gap-4 mt-8">
-                  <a href="#" aria-label="LinkedIn" className="text-foreground/50 hover:text-primary transition-colors"><Linkedin size={22} strokeWidth={1.5} /></a>
-                  <a href="#" aria-label="Facebook" className="text-foreground/50 hover:text-primary transition-colors"><Facebook size={22} strokeWidth={1.5} /></a>
-                  <a href="#" aria-label="Instagram" className="text-foreground/50 hover:text-primary transition-colors"><Instagram size={22} strokeWidth={1.5} /></a>
+
+                <div className="flex items-center gap-2 mt-3" style={{ color: "#444444", fontSize: 14 }}>
+                  <span>🕐</span> Monday – Friday, 9:00am – 5:00pm
+                </div>
+                <p className="italic text-muted-foreground mt-2" style={{ fontSize: 13 }}>
+                  We aim to respond to all enquiries within 24 hours
+                </p>
+
+                <div className="my-5" style={{ width: 60, height: 1, backgroundColor: "#00706B" }} />
+
+                <p className="font-bold text-sm mb-3" style={{ color: "#00706B", fontSize: 14 }}>What happens next?</p>
+                <ol className="space-y-2 text-muted-foreground" style={{ fontSize: 13 }}>
+                  <li className="flex gap-2"><span className="font-semibold text-foreground">1.</span> We receive your message and review it within 24 hours</li>
+                  <li className="flex gap-2"><span className="font-semibold text-foreground">2.</span> A senior team member will contact you directly</li>
+                  <li className="flex gap-2"><span className="font-semibold text-foreground">3.</span> We'll arrange a call or visit at a time that suits you</li>
+                </ol>
+
+                <div className="my-5" style={{ width: 60, height: 1, backgroundColor: "#00706B" }} />
+
+                <div className="flex flex-col sm:flex-row gap-4">
+                  {[
+                    { Icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/company/chamarel-healthcare" },
+                    { Icon: Facebook, label: "Facebook", href: "https://www.facebook.com/chamarelhealthcare" },
+                    { Icon: Instagram, label: "Instagram", href: "https://www.instagram.com/chamarelhealthcare" },
+                  ].map((s) => (
+                    <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:opacity-70 transition-opacity" style={{ color: "#00706B" }}>
+                      <s.Icon size={22} strokeWidth={1.5} />
+                      <span className="text-muted-foreground" style={{ fontSize: 13 }}>{s.label}</span>
+                      <span style={{ fontSize: 13 }}>→</span>
+                    </a>
+                  ))}
                 </div>
               </div>
             </FadeIn>
