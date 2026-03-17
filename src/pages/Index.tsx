@@ -14,6 +14,7 @@ import cafeOutingImg from "@/assets/photos/cafe-outing.png";
 import craftSessionImg from "@/assets/photos/craft-session.png";
 import gardeningPottingImg from "@/assets/photos/gardening-potting.png";
 import zooVisitImg from "@/assets/photos/zoo-visit.png";
+import gardeningPairImg from "@/assets/photos/gardening-pair.png";
 
 const contactSchema = z.object({
   firstName: z.string().min(1, "Required"),
@@ -45,9 +46,9 @@ const stats = [
 ];
 
 const stories = [
-  { title: "Empowering independence", excerpt: "How we helped James build confidence and develop daily living skills in his supported living setting." },
-  { title: "A journey to confidence", excerpt: "Sarah's story of recovery through trauma-informed mental health support and community engagement." },
-  { title: "Thriving in the community", excerpt: "Mark's progression from intensive support to independent living with our dedicated care team." },
+  { title: "Empowering independence", excerpt: "How we helped James build confidence and develop daily living skills in his supported living setting.", image: gardeningPairImg },
+  { title: "A journey to confidence", excerpt: "Sarah's story of recovery through trauma-informed mental health support and community engagement.", image: cafeOutingImg },
+  { title: "Thriving in the community", excerpt: "Mark's progression from intensive support to independent living with our dedicated care team.", image: gardenPartyImg },
 ];
 
 const Index = () => {
@@ -175,12 +176,17 @@ const Index = () => {
           <div className="grid md:grid-cols-3 gap-6">
             {stories.map((story, i) => (
               <FadeIn key={i} delay={i * 0.1}>
-                <div className="p-8 bg-card rounded-2xl h-full flex flex-col" style={{ boxShadow: "var(--card-shadow)" }}>
-                  <h3 className="text-lg font-medium mb-3">{story.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed flex-1">{story.excerpt}</p>
-                  <Link to="/stories" className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-accent hover:text-primary transition-colors">
-                    Read More <ArrowRight size={16} />
-                  </Link>
+                <div className="bg-card rounded-2xl h-full flex flex-col overflow-hidden border-t-4 border-primary" style={{ boxShadow: "var(--card-shadow)" }}>
+                  <div className="h-[180px] overflow-hidden">
+                    <img src={story.image} alt={story.title} className="w-full h-full object-cover" />
+                  </div>
+                  <div className="p-8 flex flex-col flex-1">
+                    <h3 className="text-lg font-medium mb-3">{story.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed flex-1">{story.excerpt}</p>
+                    <Link to="/stories" className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-accent hover:text-primary transition-colors">
+                      Read More <ArrowRight size={16} />
+                    </Link>
+                  </div>
                 </div>
               </FadeIn>
             ))}
