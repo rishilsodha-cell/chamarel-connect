@@ -37,8 +37,8 @@ const moments = [
 
 const stats = [
   { label: "CQC Inspected & Rated Good", value: "CQC" },
-  { label: "Trauma-Informed Practice", value: "TIP" },
-  { label: "Person-Centred at Every Step", value: "PCS" },
+  { label: "Positive Behaviour Support (PBS)", value: "PBS" },
+  { label: "National Living Wage Employer", value: "NLW" },
 ];
 
 const stories = [
