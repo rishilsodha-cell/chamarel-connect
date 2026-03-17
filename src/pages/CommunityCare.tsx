@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ShieldCheck, BadgeCheck, Heart, UtensilsCrossed, Palette, HeartPulse, Brain, Users, ArrowRight, Camera } from "lucide-react";
 import Layout from "@/components/Layout";
 import FadeIn from "@/components/FadeIn";
+import wateringPlantsImg from "@/assets/photos/watering-plants.png";
 
 const services = [
   { icon: Palette, title: "Activities & Wellbeing", description: "Supported holidays, art therapy, hydrotherapy, college access, supported employment, and independence training — designed to enrich lives and build confidence." },
@@ -57,8 +58,8 @@ const CommunityCare = () => (
     {/* Split-screen photo banner */}
     <section className="overflow-hidden">
       <div className="grid md:grid-cols-2">
-        <div className="bg-[hsl(var(--community-accent)/0.1)] aspect-[4/3] md:aspect-auto flex items-center justify-center">
-          <Camera className="w-16 h-16 text-muted-foreground/20" strokeWidth={1.5} />
+        <div className="bg-[hsl(var(--community-accent)/0.1)] aspect-[4/3] md:aspect-auto overflow-hidden">
+          <img src={wateringPlantsImg} alt="Resident watering plants in the garden" className="w-full h-full object-cover" />
         </div>
         <div className="flex items-center p-10 md:p-16">
           <div>
