@@ -8,7 +8,7 @@ const Footer = () => (
         <div>
           <h3 className="text-lg font-semibold mb-4">Chamarel Healthcare</h3>
           <p className="text-primary-foreground/70 text-sm leading-relaxed">
-            Specialist, values-led care and support for adults with learning disabilities, autism, mental health needs, and complex conditions across London.
+            Values-led care and support for adults with learning disabilities, autism, and mental health needs across London.
           </p>
         </div>
         <div>

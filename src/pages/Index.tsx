@@ -46,7 +46,7 @@ const stats = [
 const stories = [
   { title: "Empowering independence", excerpt: "How we helped James build confidence and develop daily living skills in his supported living setting." },
   { title: "A journey to confidence", excerpt: "Sarah's story of recovery through trauma-informed mental health support and community engagement." },
-  { title: "Thriving in the community", excerpt: "Mark's progression from intensive support to independent living with our specialist care team." },
+  { title: "Thriving in the community", excerpt: "Mark's progression from intensive support to independent living with our dedicated care team." },
 ];
 
 const trustBadges = [

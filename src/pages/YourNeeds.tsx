@@ -40,7 +40,7 @@ const YourNeeds = () => (
         </FadeIn>
         <FadeIn delay={0.1}>
           <p className="mt-8 text-lg leading-relaxed text-foreground/80">
-            At Chamarel Healthcare, we offer specialist care and support to people with a range of needs. Whether you have a learning disability, autism, mental health challenges, or complex care needs, our expert teams tailor their support to meet your individual goals, preferences and values.
+            At Chamarel Healthcare, we offer care and support to people with a range of needs. Whether you have a learning disability, autism, or mental health challenges, our expert teams tailor their support to meet your individual goals, preferences and values.
           </p>
         </FadeIn>
       </div>
