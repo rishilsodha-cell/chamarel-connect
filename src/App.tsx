@@ -8,6 +8,7 @@ import About from "./pages/About.tsx";
 import YourNeeds from "./pages/YourNeeds.tsx";
 import YourSupport from "./pages/YourSupport.tsx";
 import Referrals from "./pages/Referrals.tsx";
+import ReferralPage from "./pages/ReferralPage.tsx";
 import Careers from "./pages/Careers.tsx";
 import Privacy from "./pages/Privacy.tsx";
 import CommunityCare from "./pages/CommunityCare.tsx";
