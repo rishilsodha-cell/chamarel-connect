@@ -80,7 +80,7 @@ const Index = () => {
         <div className="relative container-narrow py-28 md:py-40 lg:py-48">
           <FadeIn>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight leading-tight max-w-3xl text-primary-foreground">
-              Specialist Care & Support for People with Complex Needs
+              Care & Support for People with Learning Disabilities, Autism and Mental Health Needs
             </h1>
           </FadeIn>
           <FadeIn delay={0.15}>
