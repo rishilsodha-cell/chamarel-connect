@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ShieldCheck, BadgeCheck, Heart, UtensilsCrossed, Linkedin, Facebook, Instagram, Mail, ArrowRight, Camera } from "lucide-react";
+import { Linkedin, Facebook, Instagram, Mail, ArrowRight, Camera } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
