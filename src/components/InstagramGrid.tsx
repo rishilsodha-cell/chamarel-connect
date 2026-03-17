@@ -1,21 +1,5 @@
-import { Instagram, Heart, Eye } from "lucide-react";
+import { Instagram } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
-
-import bbqCookingImg from "@/assets/photos/bbq-cooking.png";
-import gardenPartyImg from "@/assets/photos/garden-party.png";
-import gardeningGroupImg from "@/assets/photos/gardening-group.png";
-import gardeningPairImg from "@/assets/photos/gardening-pair.png";
-import wateringPlantsImg from "@/assets/photos/watering-plants.png";
-import craftSessionImg from "@/assets/photos/craft-session.png";
-
-const posts = [
-  { caption: "Garden time 🌿", image: bbqCookingImg },
-  { caption: "Summer Garden Party", image: gardenPartyImg },
-  { caption: "Growing Together", image: gardeningGroupImg },
-  { caption: "Potting & Planting", image: gardeningPairImg },
-  { caption: "Watering the Garden", image: wateringPlantsImg },
-  { caption: "Creative Afternoons", image: craftSessionImg },
-];
 
 const InstagramGrid = () => (
   <section className="section-padding" style={{ backgroundColor: "#FFFFFF" }}>
@@ -28,23 +12,9 @@ const InstagramGrid = () => (
           @chamarelhealthcare
         </p>
       </FadeIn>
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
-        {posts.map((post, i) => (
-          <FadeIn key={i} delay={i * 0.05}>
-            <div className="group relative aspect-square rounded-lg overflow-hidden" style={{ boxShadow: "var(--card-shadow)" }}>
-              <img src={post.image} alt={post.caption} className="w-full h-full object-cover" />
-              {/* Instagram icon overlay */}
-              <div className="absolute top-3 right-3 bg-card/80 backdrop-blur-sm rounded-full p-1.5">
-                <Instagram size={14} strokeWidth={1.5} className="text-foreground/50" />
-              </div>
-              {/* Hover overlay */}
-              <div className="absolute inset-0 bg-primary/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
-                <Heart size={22} className="text-primary-foreground" fill="currentColor" />
-                <Eye size={22} className="text-primary-foreground" />
-              </div>
-            </div>
-          </FadeIn>
-        ))}
+      <div className="w-full max-w-[1200px] mx-auto">
+        {/* @ts-ignore */}
+        <behold-widget feed-id="1pnKiplpQrZiCgmIsOfJ"></behold-widget>
       </div>
       <FadeIn delay={0.3}>
         <div className="text-center mt-10">
