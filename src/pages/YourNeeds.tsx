@@ -1,33 +1,28 @@
 import { Link } from "react-router-dom";
-import { Puzzle, Brain, HeartPulse, Activity, Sparkles } from "lucide-react";
 import Layout from "@/components/Layout";
 import FadeIn from "@/components/FadeIn";
 
 const needs = [
   {
-    icon: Puzzle,
     title: "Autism",
+    path: "/your-needs/autism",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400",
+    bg: "bg-accent/20",
     desc: "Structured, sensory-aware support that helps autistic individuals build independence and thrive in their environment.",
   },
   {
-    icon: Brain,
     title: "Learning Disabilities",
+    path: "/your-needs/learning-disabilities",
+    image: "https://images.unsplash.com/photo-1531983412531-1f49a365ffed?w=400",
+    bg: "bg-amber-100",
     desc: "Values-led, co-produced support empowering adults with learning disabilities to live with confidence and purpose.",
   },
   {
-    icon: HeartPulse,
     title: "Mental Health",
+    path: "/your-needs/mental-health",
+    image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400",
+    bg: "bg-purple-100",
     desc: "Compassionate, trauma-informed mental health support focused on recovery, resilience, and community belonging.",
-  },
-  {
-    icon: Activity,
-    title: "Enhanced Care",
-    desc: "Tailored support for individuals with behavioural, physical, or medical needs.",
-  },
-  {
-    icon: Sparkles,
-    title: "Brain Injury Rehabilitation",
-    desc: "Structured rehabilitation support helping individuals rebuild skills and regain independence after brain injury.",
   },
 ];
 
@@ -48,19 +43,16 @@ const YourNeeds = () => (
 
     <section className="section-padding bg-secondary pt-0">
       <div className="container-narrow">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-3 gap-8 max-w-3xl mx-auto">
           {needs.map((need, i) => (
             <FadeIn key={i} delay={i * 0.08}>
-              <div
-                className="p-8 bg-card rounded-2xl h-full flex flex-col transition-all duration-200 hover:-translate-y-1"
-                style={{ boxShadow: "var(--card-shadow)" }}
-              >
-                <div className="p-3 rounded-xl bg-secondary w-fit mb-5">
-                  <need.icon size={24} strokeWidth={1.5} className="text-accent" />
+              <Link to={need.path} className="flex flex-col items-center text-center gap-5 group">
+                <div className={`${need.bg} w-40 h-40 rounded-full overflow-hidden transition-transform duration-300 group-hover:scale-105`}>
+                  <img src={need.image} alt={need.title} className="w-full h-full object-cover" />
                 </div>
-                <h2 className="text-xl font-medium mb-3">{need.title}</h2>
-                <p className="text-sm text-muted-foreground leading-relaxed flex-1">{need.desc}</p>
-              </div>
+                <h2 className="text-xl font-semibold text-foreground">{need.title}</h2>
+                <p className="text-sm text-muted-foreground leading-relaxed">{need.desc}</p>
+              </Link>
             </FadeIn>
           ))}
         </div>
