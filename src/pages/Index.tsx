@@ -22,7 +22,7 @@ const needs = [
   { icon: Puzzle, title: "Autism", path: "/your-needs" },
   { icon: Brain, title: "Learning Disabilities", path: "/your-needs" },
   { icon: HeartPulse, title: "Mental Health", path: "/your-needs" },
-  { icon: Activity, title: "Complex & Enhanced Care", path: "/your-needs" },
+  { icon: Activity, title: "Enhanced Care", path: "/your-needs" },
   { icon: Sparkles, title: "Brain Injury Rehabilitation", path: "/your-needs" },
 ];
 
@@ -46,7 +46,7 @@ const stats = [
 const stories = [
   { title: "Empowering independence", excerpt: "How we helped James build confidence and develop daily living skills in his supported living setting." },
   { title: "A journey to confidence", excerpt: "Sarah's story of recovery through trauma-informed mental health support and community engagement." },
-  { title: "Thriving in the community", excerpt: "Mark's progression from intensive support to independent living with our specialist care team." },
+  { title: "Thriving in the community", excerpt: "Mark's progression from intensive support to independent living with our dedicated care team." },
 ];
 
 const trustBadges = [
@@ -80,12 +80,12 @@ const Index = () => {
         <div className="relative container-narrow py-28 md:py-40 lg:py-48">
           <FadeIn>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight leading-tight max-w-3xl text-primary-foreground">
-              Specialist Care & Support for People with Complex Needs
+              Care & Support for People with Learning Disabilities, Autism and Mental Health Needs
             </h1>
           </FadeIn>
           <FadeIn delay={0.15}>
             <p className="mt-6 text-lg md:text-xl text-primary-foreground/85 max-w-2xl leading-relaxed">
-              At Chamarel Healthcare, we provide compassionate, person-centred care for adults with learning disabilities, autism, mental health needs, and complex conditions — delivered in London and the surrounding community.
+              At Chamarel Healthcare, we provide compassionate, person-centred care for adults with learning disabilities, autism, and mental health needs — delivered in London and the surrounding community.
             </p>
           </FadeIn>
           <FadeIn delay={0.3}>
@@ -107,7 +107,7 @@ const Index = () => {
           <FadeIn>
             <h2 className="text-3xl md:text-4xl font-medium text-center mb-4">Your Needs</h2>
             <p className="text-center text-foreground/70 max-w-2xl mx-auto mb-12">
-              We provide specialist care tailored to a range of complex needs.
+              We provide tailored care for people with learning disabilities, autism, and mental health needs.
             </p>
           </FadeIn>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">

@@ -12,7 +12,7 @@ const team = [
   { name: "Staff Member", role: "Registered Manager", bio: "Leading with compassion and over 10 years of specialist care experience.", quote: "Every person deserves to feel safe, valued, and heard." },
   { name: "Staff Member", role: "Team Leader", bio: "Passionate about empowering individuals through person-centred support.", quote: "I love seeing the people I support achieve something new every day." },
   { name: "Staff Member", role: "Care Support Worker", bio: "Dedicated to building trust and creating meaningful daily experiences.", quote: "The small moments of joy make this work so rewarding." },
-  { name: "Staff Member", role: "PBS Practitioner", bio: "Specialist in Positive Behaviour Support and trauma-informed care.", quote: "Understanding someone's story changes everything about how you support them." },
+  { name: "Staff Member", role: "PBS Practitioner", bio: "Experienced in Positive Behaviour Support and trauma-informed care.", quote: "Understanding someone's story changes everything about how you support them." },
   { name: "Staff Member", role: "Senior Support Worker", bio: "Committed to helping people build independence and confidence.", quote: "Seeing someone cook their first meal independently — that's why I do this." },
   { name: "Staff Member", role: "Activities Coordinator", bio: "Creating enriching experiences through art, outings, and community engagement.", quote: "Creativity opens doors that nothing else can." },
   { name: "Staff Member", role: "Care Support Worker", bio: "Focused on dignity, respect, and building genuine connections.", quote: "Every day is a chance to make someone's life a little brighter." },
@@ -37,7 +37,7 @@ const About = () => (
         <FadeIn delay={0.1}>
           <div className="mt-8 space-y-6 text-lg leading-relaxed text-foreground/80">
             <p>
-              At Chamarel Healthcare, our purpose is simple: fulfilling lives for all. We provide specialist, values-led care and support for adults with learning disabilities, autism, mental health needs, and complex conditions across London and the wider community.
+              At Chamarel Healthcare, our purpose is simple: fulfilling lives for all. We provide values-led care and support for adults with learning disabilities, autism, and mental health needs across London and the wider community.
             </p>
             <p>
               At the heart of everything we do is <span className="font-medium text-primary">Positive Behaviour Support (PBS)</span> and <span className="font-medium text-primary">trauma-informed practice</span> — creating safe, emotionally intelligent environments where people feel understood, valued, and empowered to shape their own lives.

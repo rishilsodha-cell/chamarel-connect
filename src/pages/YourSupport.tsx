@@ -7,7 +7,7 @@ const supports = [
   {
     icon: Home,
     title: "Care Homes",
-    desc: "Safe, homely environments with 24/7 specialist support.",
+    desc: "Safe, homely environments with 24/7 dedicated support.",
   },
   {
     icon: Users,

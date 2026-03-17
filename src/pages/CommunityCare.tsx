@@ -5,7 +5,7 @@ import FadeIn from "@/components/FadeIn";
 
 const services = [
   { icon: Palette, title: "Activities & Wellbeing", description: "Supported holidays, art therapy, hydrotherapy, college access, supported employment, and independence training — designed to enrich lives and build confidence." },
-  { icon: HeartPulse, title: "Mental Health Support", description: "Trauma-informed, PBS-led support promoting recovery, resilience, and community integration for adults with complex mental health needs." },
+  { icon: HeartPulse, title: "Mental Health Support", description: "Trauma-informed, PBS-led support promoting recovery, resilience, and community integration for adults with mental health needs." },
   { icon: Brain, title: "Learning Disabilities Support", description: "Co-produced, person-centred plans that promote inclusion, independence, and personal growth for adults with learning disabilities." },
   { icon: Users, title: "Community Outreach", description: "Flexible, responsive support delivered in the community — in individuals' homes, community settings, and shared spaces." },
 ];
@@ -46,8 +46,8 @@ const CommunityCare = () => (
         </FadeIn>
         <FadeIn delay={0.15}>
           <p className="mt-8 text-lg leading-relaxed text-foreground/80 max-w-3xl mx-auto">
-            Chamarel Community Care Services provides compassionate, specialist support to adults
-            with mental health needs, learning disabilities, and complex requirements — enabling
+            Chamarel Community Care Services provides compassionate, person-centred support to adults
+            with mental health needs, learning disabilities, and autism — enabling
             individuals to live safely, confidently, and independently within their own communities.
           </p>
         </FadeIn>
