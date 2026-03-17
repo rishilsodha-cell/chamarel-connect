@@ -18,7 +18,7 @@ const posts = [
 ];
 
 const InstagramGrid = () => (
-  <section className="section-padding bg-secondary">
+  <section className="section-padding" style={{ backgroundColor: "#FFFFFF" }}>
     <div className="container-narrow">
       <FadeIn>
         <h2 className="text-3xl md:text-4xl font-medium text-center mb-2">
@@ -52,9 +52,12 @@ const InstagramGrid = () => (
             href="https://www.instagram.com/chamarelhealthcare"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-full font-semibold hover:-translate-y-0.5 transition-all duration-250 hover:shadow-lg"
+            className="inline-flex items-center gap-2 rounded-full text-sm font-medium transition-all duration-200"
+            style={{ border: "2px solid #00706B", color: "#00706B", padding: "12px 32px", backgroundColor: "#FFFFFF" }}
+            onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = "#00706B"; e.currentTarget.style.color = "#FFFFFF"; }}
+            onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "#FFFFFF"; e.currentTarget.style.color = "#00706B"; }}
           >
-            <Instagram size={18} strokeWidth={1.5} />
+            <Instagram size={16} strokeWidth={1.5} />
             Follow us on Instagram
           </a>
         </div>
