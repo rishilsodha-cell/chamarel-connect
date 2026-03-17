@@ -1,6 +1,6 @@
 import Layout from "@/components/Layout";
 import FadeIn from "@/components/FadeIn";
-import { Briefcase, GraduationCap, Heart, Clock } from "lucide-react";
+import { Briefcase, GraduationCap, Heart, Clock, Linkedin } from "lucide-react";
 
 const perks = [
   { icon: Heart, title: "Values-Based Culture", desc: "Join a team that genuinely cares. We recruit for character and train for skill." },
