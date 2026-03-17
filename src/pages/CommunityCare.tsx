@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ShieldCheck, BadgeCheck, Heart, UtensilsCrossed, Palette, HeartPulse, Brain, Users, ArrowRight, Camera } from "lucide-react";
 import Layout from "@/components/Layout";
 import FadeIn from "@/components/FadeIn";
+import wateringPlantsImg from "@/assets/photos/watering-plants.png";
 
 const services = [
   { icon: Palette, title: "Activities & Wellbeing", description: "Supported holidays, art therapy, hydrotherapy, college access, supported employment, and independence training — designed to enrich lives and build confidence." },
