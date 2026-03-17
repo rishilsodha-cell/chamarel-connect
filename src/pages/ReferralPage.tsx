@@ -216,9 +216,9 @@ const ReferralPage = () => {
             Download our service brochure or contact us to arrange a visit to one of our services.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link to="/#contact" className="px-8 py-4 bg-white rounded-full font-semibold hover:-translate-y-0.5 transition-all duration-250 hover:shadow-lg" style={{ color: "#00706B" }}>
+            <a href="/#get-in-touch" className="px-8 py-4 bg-white rounded-full font-semibold hover:-translate-y-0.5 transition-all duration-250 hover:shadow-lg" style={{ color: "#00706B" }}>
               Contact Us
-            </Link>
+            </a>
             <Link to="/your-needs" className="px-8 py-4 rounded-full font-semibold border-2 border-white text-white hover:-translate-y-0.5 transition-all duration-250 hover:bg-white/10">
               View Our Services
             </Link>

@@ -136,12 +136,12 @@ const YourNeedsSection = ({ homepage = false }: Props) => (
                     </>
                   )}
 
-                  <Link
-                    to={need.path}
+                  <a
+                    href={need.path}
                     className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-full font-semibold text-sm hover:-translate-y-0.5 transition-all duration-250 hover:shadow-lg"
                   >
                     {need.cta} <ArrowRight size={16} />
-                  </Link>
+                  </a>
                 </div>
               </FadeIn>
             </div>

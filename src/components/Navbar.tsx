@@ -101,21 +101,26 @@ const Navbar = () => {
             className="lg:hidden overflow-hidden bg-white"
           >
             <div className="flex flex-col">
-              {mobileLinks.map((link, i) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  onClick={() => handleClick(link.path)}
-                  className="text-lg font-medium py-4 px-6"
-                  style={{
-                    color: "#2D2D2D",
-                    borderLeft: "3px solid #00706B",
-                    borderBottom: i < mobileLinks.length - 1 ? "1px solid #EEEEEE" : "none",
-                  }}
-                >
-                  {link.label}
-                </Link>
-              ))}
+              {mobileLinks.map((link, i) => {
+                const isHash = link.path.startsWith("/#");
+                const Tag = isHash ? "a" : Link;
+                const linkProps = isHash ? { href: link.path } : { to: link.path };
+                return (
+                  <Tag
+                    key={link.path}
+                    {...(linkProps as any)}
+                    onClick={() => handleClick(link.path)}
+                    className="text-lg font-medium py-4 px-6"
+                    style={{
+                      color: "#2D2D2D",
+                      borderLeft: "3px solid #00706B",
+                      borderBottom: i < mobileLinks.length - 1 ? "1px solid #EEEEEE" : "none",
+                    }}
+                  >
+                    {link.label}
+                  </Tag>
+                );
+              })}
             </div>
           </motion.nav>
         )}
