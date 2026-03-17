@@ -19,11 +19,9 @@ const contactSchema = z.object({
 type ContactForm = z.infer<typeof contactSchema>;
 
 const needs = [
-  { icon: Puzzle, title: "Autism", path: "/your-needs" },
-  { icon: Brain, title: "Learning Disabilities", path: "/your-needs" },
-  { icon: HeartPulse, title: "Mental Health", path: "/your-needs" },
-  { icon: Activity, title: "Enhanced Care", path: "/your-needs" },
-  { icon: Sparkles, title: "Brain Injury Rehabilitation", path: "/your-needs" },
+  { title: "Autism", path: "/your-needs/autism", image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400", bg: "bg-accent/20" },
+  { title: "Learning Disabilities", path: "/your-needs/learning-disabilities", image: "https://images.unsplash.com/photo-1531983412531-1f49a365ffed?w=400", bg: "bg-amber-100" },
+  { title: "Mental Health", path: "/your-needs/mental-health", image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400", bg: "bg-purple-100" },
 ];
 
 const moments = [
