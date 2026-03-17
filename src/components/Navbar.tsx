@@ -36,8 +36,12 @@ const Navbar = () => {
   return (
     <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
       <div className="container-narrow flex items-center justify-between h-16 md:h-20">
-        <Link to="/" className="text-xl font-semibold tracking-tight text-primary">
-          Chamarel Healthcare
+        <Link to="/" className="flex flex-col">
+          <div className="text-lg md:text-[22px] leading-tight">
+            <span className="font-bold" style={{ color: "#00706B" }}>Chamarel</span>{" "}
+            <span className="font-normal" style={{ color: "#2D2D2D" }}>Healthcare</span>
+          </div>
+          <div className="h-0.5 w-9 mt-1 rounded-full" style={{ backgroundColor: "#00706B" }} />
         </Link>
 
         {/* Desktop nav */}
