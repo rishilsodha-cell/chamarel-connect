@@ -54,25 +54,30 @@ const Navbar = () => {
 
         {/* Desktop nav */}
         <nav className="hidden lg:flex items-center gap-2.5">
-          {desktopLinks.map((link) => (
-            <Link
-              key={link.path}
-              to={link.path}
-              onClick={() => handleClick(link.path)}
-              className={`text-[12px] font-medium tracking-normal uppercase transition-opacity duration-200 relative group whitespace-nowrap ${
-                isActive(link.path)
-                  ? "text-primary opacity-100"
-                  : "text-foreground/70 hover:text-foreground hover:opacity-100"
-              }`}
-            >
-              {link.label}
-              <span
-                className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-transform duration-200 origin-left ${
-                  isActive(link.path) ? "w-full scale-x-100" : "w-full scale-x-0 group-hover:scale-x-100"
+          {desktopLinks.map((link) => {
+            const isHash = link.path.startsWith("/#");
+            const Tag = isHash ? "a" : Link;
+            const linkProps = isHash ? { href: link.path } : { to: link.path };
+            return (
+              <Tag
+                key={link.path}
+                {...(linkProps as any)}
+                onClick={() => handleClick(link.path)}
+                className={`text-[12px] font-medium tracking-normal uppercase transition-opacity duration-200 relative group whitespace-nowrap ${
+                  isActive(link.path)
+                    ? "text-primary opacity-100"
+                    : "text-foreground/70 hover:text-foreground hover:opacity-100"
                 }`}
-              />
-            </Link>
-          ))}
+              >
+                {link.label}
+                <span
+                  className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-transform duration-200 origin-left ${
+                    isActive(link.path) ? "w-full scale-x-100" : "w-full scale-x-0 group-hover:scale-x-100"
+                  }`}
+                />
+              </Tag>
+            );
+          })}
         </nav>
 
         {/* Mobile toggle */}
