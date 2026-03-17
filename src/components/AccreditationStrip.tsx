@@ -1,12 +1,13 @@
 import FadeIn from "./FadeIn";
 import cqcLogo from "@/assets/badges/cqc-good.webp";
 import livingWageLogo from "@/assets/badges/living-wage.png";
+import foodHygieneLogo from "@/assets/badges/food-hygiene.png";
 import disabilityConfidentLogo from "@/assets/badges/disability-confident.jpg";
 
 const badges = [
   { label: "CQC Inspected & Rated Good", href: "https://www.cqc.org.uk", image: cqcLogo },
   { label: "National Living Wage Employer", href: "https://www.livingwage.org.uk", image: livingWageLogo },
-  { label: "Food Hygiene Rating: 5", href: "https://www.food.gov.uk", image: null },
+  { label: "Food Hygiene Rating: 5", href: "https://www.food.gov.uk", image: foodHygieneLogo },
   { label: "Disability Confident Employer", href: "https://www.gov.uk/disability-confident", image: disabilityConfidentLogo },
 ];
 
