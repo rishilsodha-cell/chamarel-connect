@@ -1,39 +1,17 @@
-import { BadgeCheck } from "lucide-react";
 import FadeIn from "./FadeIn";
-
-const CQCBadge = () => (
-  <svg width="120" height="80" viewBox="0 0 120 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect width="120" height="80" rx="10" fill="#00474C" />
-    <text x="60" y="38" textAnchor="middle" fill="white" fontWeight="bold" fontSize="22" fontFamily="system-ui, sans-serif">CQC</text>
-    <text x="48" y="58" textAnchor="middle" fill="#FFD700" fontSize="13" fontFamily="system-ui, sans-serif">★</text>
-    <text x="72" y="58" textAnchor="middle" fill="white" fontSize="11" fontFamily="system-ui, sans-serif">Rated Good</text>
-  </svg>
-);
-
-const NLWBadge = () => (
-  <svg width="120" height="80" viewBox="0 0 120 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect width="120" height="80" rx="10" fill="#1B3A6B" />
-    <text x="60" y="38" textAnchor="middle" fill="white" fontWeight="bold" fontSize="22" fontFamily="system-ui, sans-serif">NLW</text>
-    <text x="60" y="58" textAnchor="middle" fill="white" fontSize="9" fontFamily="system-ui, sans-serif">National Living Wage</text>
-  </svg>
-);
-
-const FoodHygieneBadge = () => (
-  <svg width="120" height="80" viewBox="0 0 120 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect width="120" height="80" rx="10" fill="#00843D" />
-    <text x="60" y="48" textAnchor="middle" fill="white" fontWeight="bold" fontSize="32" fontFamily="system-ui, sans-serif">5</text>
-    <text x="60" y="66" textAnchor="middle" fill="white" fontSize="9" fontFamily="system-ui, sans-serif">Food Hygiene</text>
-  </svg>
-);
+import cqcLogo from "@/assets/badges/cqc-good.webp";
+import livingWageLogo from "@/assets/badges/living-wage.png";
+import disabilityConfidentLogo from "@/assets/badges/disability-confident.jpg";
 
 const badges = [
-  { label: "CQC Inspected & Rated Good", href: "https://www.cqc.org.uk", Badge: CQCBadge },
-  { label: "National Living Wage Employer", href: "https://www.livingwage.org.uk", Badge: NLWBadge },
-  { label: "Food Hygiene Rating: 5", href: "https://www.food.gov.uk", Badge: FoodHygieneBadge },
+  { label: "CQC Inspected & Rated Good", href: "https://www.cqc.org.uk", image: cqcLogo },
+  { label: "National Living Wage Employer", href: "https://www.livingwage.org.uk", image: livingWageLogo },
+  { label: "Food Hygiene Rating: 5", href: "https://www.food.gov.uk", image: null },
+  { label: "Disability Confident Employer", href: "https://www.gov.uk/disability-confident", image: disabilityConfidentLogo },
 ];
 
 const AccreditationStrip = () => (
-  <section className="py-12 bg-card">
+  <section className="py-10" style={{ backgroundColor: "#FFFFFF", paddingTop: 40, paddingBottom: 40 }}>
     <div className="container-narrow">
       <FadeIn>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-end justify-items-center">
@@ -45,21 +23,23 @@ const AccreditationStrip = () => (
               rel="noopener noreferrer"
               className="flex flex-col items-center text-center gap-3 group"
             >
-              <div className="rounded-xl shadow-md transition-transform duration-200 group-hover:scale-105 overflow-hidden">
-                <item.Badge />
+              <div className="h-20 flex items-center justify-center">
+                {item.image ? (
+                  <img
+                    src={item.image}
+                    alt={item.label}
+                    className="h-20 w-auto object-contain transition-opacity duration-200 group-hover:opacity-80"
+                  />
+                ) : (
+                  <div className="h-20 w-20 rounded-xl bg-[#00843D] flex flex-col items-center justify-center">
+                    <span className="text-white font-bold text-3xl">5</span>
+                    <span className="text-white text-[9px]">Food Hygiene</span>
+                  </div>
+                )}
               </div>
-              <span className="text-xs font-medium" style={{ color: "#444", fontSize: "12px" }}>{item.label}</span>
+              <span style={{ color: "#666666", fontSize: 12 }} className="font-medium">{item.label}</span>
             </a>
           ))}
-          {/* Staff Verified — styled badge */}
-          <div className="flex flex-col items-center text-center gap-3">
-            <div className="h-20 flex items-center justify-center">
-              <div className="w-16 h-16 rounded-full bg-accent/15 flex items-center justify-center">
-                <BadgeCheck size={36} strokeWidth={1.5} className="text-accent" />
-              </div>
-            </div>
-            <span className="text-xs font-medium" style={{ color: "#444", fontSize: "12px" }}>Staff Verified</span>
-          </div>
         </div>
       </FadeIn>
     </div>
