@@ -102,26 +102,55 @@ const About = () => (
       </div>
     </section>
 
-    {/* Behind the Scenes */}
+    {/* Facebook Widget + Behind the Scenes */}
     <section className="py-16 bg-secondary">
       <div className="container-narrow">
-        <FadeIn>
-          <h2 className="text-2xl md:text-3xl font-medium text-center mb-8">Behind the Scenes</h2>
-        </FadeIn>
-        <FadeIn delay={0.1}>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-            {behindTheScenes.map((img, i) => (
-              <div key={i} className="group relative overflow-hidden rounded-2xl">
-                <div className={`${img.hue} aspect-[16/10] flex items-center justify-center`}>
-                  <Camera className="w-8 h-8 text-muted-foreground/25" strokeWidth={1.5} />
-                </div>
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-primary/80 to-transparent p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                  <span className="text-[10px] font-medium text-primary-foreground">{img.caption}</span>
-                </div>
+        <div className="grid md:grid-cols-3 gap-8">
+          <div className="md:col-span-2">
+            <FadeIn>
+              <h2 className="text-2xl md:text-3xl font-medium mb-8">Behind the Scenes</h2>
+            </FadeIn>
+            <FadeIn delay={0.1}>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                {behindTheScenes.map((img, i) => (
+                  <div key={i} className="group relative overflow-hidden rounded-2xl">
+                    <div className={`${img.hue} aspect-[16/10] flex items-center justify-center`}>
+                      <Camera className="w-8 h-8 text-muted-foreground/25" strokeWidth={1.5} />
+                    </div>
+                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-primary/80 to-transparent p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                      <span className="text-[10px] font-medium text-primary-foreground">{img.caption}</span>
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
+            </FadeIn>
           </div>
-        </FadeIn>
+          <div className="md:col-span-1">
+            <FadeIn delay={0.2}>
+              <div className="bg-card rounded-2xl p-6 sticky top-24" style={{ boxShadow: "var(--card-shadow)" }}>
+                <h3 className="text-sm font-semibold uppercase tracking-wide mb-4 text-muted-foreground">Connect with us on Facebook</h3>
+                {/* Placeholder for Facebook Page Plugin embed — replace with iframe from developers.facebook.com/docs/plugins/page-plugin */}
+                <div className="bg-secondary rounded-xl aspect-[3/4] flex flex-col items-center justify-center gap-3 mb-4">
+                  <div className="w-16 h-16 rounded-full bg-[hsl(221,44%,41%)] flex items-center justify-center">
+                    <Facebook size={28} strokeWidth={1.5} className="text-white" />
+                  </div>
+                  <span className="text-sm font-medium">Chamarel Healthcare</span>
+                  <div className="flex items-center gap-1 text-xs text-muted-foreground">
+                    <ThumbsUp size={12} /> <span>1.2K followers</span>
+                  </div>
+                </div>
+                <a
+                  href="https://facebook.com/chamarelhealthcare"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full text-center px-5 py-3 rounded-xl text-sm font-semibold text-white bg-[hsl(221,44%,41%)] hover:opacity-90 transition-opacity"
+                >
+                  Follow on Facebook
+                </a>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
       </div>
     </section>
   </Layout>
