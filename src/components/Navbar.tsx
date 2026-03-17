@@ -13,7 +13,7 @@ const mobileLinks = [
   { label: "Community Care Services", path: "/community-care-services" },
   { label: "Make a Referral", path: "/referral" },
   { label: "Careers", path: "/careers" },
-  { label: "Contact Us", path: "/#contact" },
+  { label: "Contact Us", path: "/#get-in-touch" },
 ];
 
 const desktopLinks = [
@@ -25,7 +25,7 @@ const desktopLinks = [
   { label: "Gallery", path: "/gallery" },
   { label: "Stories", path: "/stories" },
   { label: "Careers", path: "/careers" },
-  { label: "Contact", path: "/#contact" },
+  { label: "Contact", path: "/#get-in-touch" },
 ];
 
 const Navbar = () => {
@@ -39,11 +39,6 @@ const Navbar = () => {
 
   const handleClick = (path: string) => {
     setOpen(false);
-    if (path === "/#contact") {
-      if (location.pathname === "/") {
-        document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
-      }
-    }
   };
 
   return (
