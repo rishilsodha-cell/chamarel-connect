@@ -35,7 +35,29 @@ const Footer = () => (
           </div>
         </div>
       </div>
-      <div className="border-t border-primary-foreground/10 mt-12 pt-8 text-center text-xs text-primary-foreground/50">
+      {/* Social strip */}
+      <div className="border-t border-primary-foreground/10 mt-12 pt-8">
+        <p className="text-center text-sm text-primary-foreground/70 mb-4">Stay connected with Chamarel Healthcare</p>
+        <div className="flex justify-center gap-4">
+          {[
+            { icon: Instagram, label: "Instagram", href: "https://instagram.com/chamarelhealthcare" },
+            { icon: Facebook, label: "Facebook", href: "https://facebook.com/chamarelhealthcare" },
+            { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com/company/chamarelhealthcare" },
+          ].map((s) => (
+            <a
+              key={s.label}
+              href={s.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary-foreground/10 text-primary-foreground/80 hover:bg-primary-foreground/20 hover:text-primary-foreground transition-colors text-sm font-medium"
+            >
+              <s.icon size={16} strokeWidth={1.5} />
+              {s.label}
+            </a>
+          ))}
+        </div>
+      </div>
+      <div className="mt-6 text-center text-xs text-primary-foreground/50">
         © 2025 Chamarel Healthcare. All rights reserved.
       </div>
     </div>

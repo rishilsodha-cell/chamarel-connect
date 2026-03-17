@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Camera } from "lucide-react";
 import Layout from "@/components/Layout";
 import FadeIn from "@/components/FadeIn";
+import SocialShareButtons from "@/components/SocialShareButtons";
 
 const categories = ["All Stories", "Mental Health", "Learning Disabilities", "Autism", "Complex Care", "Community"] as const;
 
@@ -106,6 +107,7 @@ const Stories = () => {
                     >
                       Read More <ArrowRight size={16} />
                     </Link>
+                    <SocialShareButtons title={story.headline} />
                   </div>
                 </div>
               </FadeIn>

@@ -6,6 +6,7 @@ import { z } from "zod";
 import { toast } from "sonner";
 import Layout from "@/components/Layout";
 import FadeIn from "@/components/FadeIn";
+import InstagramGrid from "@/components/InstagramGrid";
 import heroImage from "@/assets/hero-care.jpg";
 
 const contactSchema = z.object({
@@ -205,6 +206,9 @@ const Index = () => {
           </FadeIn>
         </div>
       </section>
+
+      {/* Instagram Feed */}
+      <InstagramGrid />
 
       {/* Contact */}
       <section className="section-padding bg-secondary" id="contact">
