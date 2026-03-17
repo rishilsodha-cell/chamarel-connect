@@ -37,7 +37,7 @@ const About = () => (
         <FadeIn delay={0.1}>
           <div className="mt-8 space-y-6 text-lg leading-relaxed text-foreground/80">
             <p>
-              At Chamarel Healthcare, our purpose is simple: fulfilling lives for all. We provide specialist, values-led care and support for adults with learning disabilities, autism, mental health needs, and complex conditions across London and the wider community.
+              At Chamarel Healthcare, our purpose is simple: fulfilling lives for all. We provide values-led care and support for adults with learning disabilities, autism, and mental health needs across London and the wider community.
             </p>
             <p>
               At the heart of everything we do is <span className="font-medium text-primary">Positive Behaviour Support (PBS)</span> and <span className="font-medium text-primary">trauma-informed practice</span> — creating safe, emotionally intelligent environments where people feel understood, valued, and empowered to shape their own lives.

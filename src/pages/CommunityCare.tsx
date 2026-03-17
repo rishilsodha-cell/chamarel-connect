@@ -46,8 +46,8 @@ const CommunityCare = () => (
         </FadeIn>
         <FadeIn delay={0.15}>
           <p className="mt-8 text-lg leading-relaxed text-foreground/80 max-w-3xl mx-auto">
-            Chamarel Community Care Services provides compassionate, specialist support to adults
-            with mental health needs, learning disabilities, and complex requirements — enabling
+            Chamarel Community Care Services provides compassionate, person-centred support to adults
+            with mental health needs, learning disabilities, and autism — enabling
             individuals to live safely, confidently, and independently within their own communities.
           </p>
         </FadeIn>
