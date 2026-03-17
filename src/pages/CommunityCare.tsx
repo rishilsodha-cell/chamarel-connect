@@ -58,8 +58,8 @@ const CommunityCare = () => (
     {/* Split-screen photo banner */}
     <section className="overflow-hidden">
       <div className="grid md:grid-cols-2">
-        <div className="bg-[hsl(var(--community-accent)/0.1)] aspect-[4/3] md:aspect-auto flex items-center justify-center">
-          <Camera className="w-16 h-16 text-muted-foreground/20" strokeWidth={1.5} />
+        <div className="bg-[hsl(var(--community-accent)/0.1)] aspect-[4/3] md:aspect-auto overflow-hidden">
+          <img src={wateringPlantsImg} alt="Resident watering plants in the garden" className="w-full h-full object-cover" />
         </div>
         <div className="flex items-center p-10 md:p-16">
           <div>

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Linkedin, Facebook, Instagram, Mail, ArrowRight, Camera } from "lucide-react";
+import { Linkedin, Facebook, Instagram, Mail, ArrowRight } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -8,6 +8,11 @@ import Layout from "@/components/Layout";
 import FadeIn from "@/components/FadeIn";
 import InstagramGrid from "@/components/InstagramGrid";
 import heroImage from "@/assets/hero-care.jpg";
+import gardenPartyImg from "@/assets/photos/garden-party.png";
+import cafeOutingImg from "@/assets/photos/cafe-outing.png";
+import craftSessionImg from "@/assets/photos/craft-session.png";
+import gardeningPottingImg from "@/assets/photos/gardening-potting.png";
+import zooVisitImg from "@/assets/photos/zoo-visit.png";
 
 const contactSchema = z.object({
   firstName: z.string().min(1, "Required"),
@@ -25,14 +30,11 @@ const needs = [
 ];
 
 const moments = [
-  { caption: "Garden walk with support worker", hue: "bg-primary/10" },
-  { caption: "Art therapy afternoon", hue: "bg-accent/10" },
-  { caption: "Cooking together", hue: "bg-secondary" },
-  { caption: "Community day trip", hue: "bg-primary/8" },
-  { caption: "Celebrating milestones", hue: "bg-accent/12" },
-  { caption: "Enjoying the sunshine", hue: "bg-primary/12" },
-  { caption: "Music session", hue: "bg-secondary" },
-  { caption: "Seaside holiday", hue: "bg-accent/10" },
+  { caption: "Summer Garden Party", image: gardenPartyImg },
+  { caption: "Café Day Out", image: cafeOutingImg },
+  { caption: "Creative Afternoons", image: craftSessionImg },
+  { caption: "Growing Together", image: gardeningPottingImg },
+  { caption: "Days to Remember", image: zooVisitImg },
 ];
 
 const stats = [
@@ -130,11 +132,13 @@ const Index = () => {
           <div className="overflow-x-auto pb-4 px-5">
             <div className="flex gap-4" style={{ width: "max-content" }}>
               {moments.map((m, i) => (
-                <div key={i} className="w-56 flex-shrink-0">
-                  <div className={`${m.hue} aspect-[4/5] rounded-2xl flex items-center justify-center mb-2`}>
-                    <Camera className="w-8 h-8 text-muted-foreground/25" strokeWidth={1.5} />
+                <div key={i} className="w-64 flex-shrink-0 group">
+                  <div className="relative aspect-[4/5] rounded-2xl overflow-hidden mb-2">
+                    <img src={m.image} alt={m.caption} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-primary/80 to-transparent p-4">
+                      <span className="text-sm font-medium text-primary-foreground">{m.caption}</span>
+                    </div>
                   </div>
-                  <p className="text-xs text-muted-foreground text-center">{m.caption}</p>
                 </div>
               ))}
             </div>

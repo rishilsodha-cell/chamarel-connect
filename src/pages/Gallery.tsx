@@ -1,73 +1,80 @@
 import { useState } from "react";
 import Layout from "@/components/Layout";
 import FadeIn from "@/components/FadeIn";
-import { Camera } from "lucide-react";
+import { X } from "lucide-react";
 
-const tabs = ["In the Home", "Out in the Community", "Events & Celebrations"] as const;
+import craftSessionImg from "@/assets/photos/craft-session.png";
+import bbqCookingImg from "@/assets/photos/bbq-cooking.png";
+import gardeningPairImg from "@/assets/photos/gardening-pair.png";
+import gardeningGroupImg from "@/assets/photos/gardening-group.png";
+import zooVisitImg from "@/assets/photos/zoo-visit.png";
+import cafeOutingImg from "@/assets/photos/cafe-outing.png";
+import gardenPartyImg from "@/assets/photos/garden-party.png";
+import gardeningPottingImg from "@/assets/photos/gardening-potting.png";
+import wateringPlantsImg from "@/assets/photos/watering-plants.png";
 
+const tabs = ["In the Home", "Out & About", "Our Property"] as const;
 type Tab = (typeof tabs)[number];
 
-interface PlaceholderImage {
+interface GalleryImage {
+  src: string;
   caption: string;
-  aspect: string; // tailwind aspect class
-  hue: string; // bg color class
 }
 
-const homeImages: PlaceholderImage[] = [
-  { caption: "Cosy Living Room", aspect: "aspect-[3/4]", hue: "bg-primary/10" },
-  { caption: "Mealtime Together", aspect: "aspect-square", hue: "bg-accent/10" },
-  { caption: "Garden Views", aspect: "aspect-[4/5]", hue: "bg-secondary" },
-  { caption: "Staff & Residents", aspect: "aspect-[3/4]", hue: "bg-primary/8" },
-  { caption: "Communal Kitchen", aspect: "aspect-square", hue: "bg-accent/8" },
-  { caption: "Sunny Lounge", aspect: "aspect-[4/5]", hue: "bg-primary/12" },
-  { caption: "Bedside Reading", aspect: "aspect-[3/4]", hue: "bg-secondary" },
-  { caption: "Game Night", aspect: "aspect-square", hue: "bg-accent/10" },
-  { caption: "Morning Coffee", aspect: "aspect-[4/5]", hue: "bg-primary/10" },
-  { caption: "Art Corner", aspect: "aspect-[3/4]", hue: "bg-accent/12" },
-  { caption: "Garden Path", aspect: "aspect-square", hue: "bg-secondary" },
-  { caption: "Evening Together", aspect: "aspect-[4/5]", hue: "bg-primary/8" },
+const homeImages: GalleryImage[] = [
+  { src: craftSessionImg, caption: "Creative Afternoons — Craft Session" },
+  { src: bbqCookingImg, caption: "BBQ Cooking with Rainbow Bunting" },
+  { src: gardeningPairImg, caption: "Potting & Planting Together" },
+  { src: gardeningGroupImg, caption: "Gardening as a Team" },
 ];
 
-const communityImages: PlaceholderImage[] = [
-  { caption: "Park Walk", aspect: "aspect-video", hue: "bg-accent/10" },
-  { caption: "Shopping Trip", aspect: "aspect-video", hue: "bg-primary/10" },
-  { caption: "Art Class", aspect: "aspect-video", hue: "bg-secondary" },
-  { caption: "Community Event", aspect: "aspect-video", hue: "bg-accent/8" },
-  { caption: "Supported Holiday", aspect: "aspect-video", hue: "bg-primary/12" },
-  { caption: "Hydrotherapy Session", aspect: "aspect-video", hue: "bg-accent/10" },
-  { caption: "Café Visit", aspect: "aspect-square", hue: "bg-primary/10" },
-  { caption: "Library Trip", aspect: "aspect-square", hue: "bg-secondary" },
-  { caption: "Bowling Day Out", aspect: "aspect-square", hue: "bg-accent/12" },
-  { caption: "Nature Walk", aspect: "aspect-square", hue: "bg-primary/8" },
+const outImages: GalleryImage[] = [
+  { src: zooVisitImg, caption: "Zoo Visit — Meeting the Zebras" },
+  { src: cafeOutingImg, caption: "Café Day Out — Cake & Thumbs Up!" },
+  { src: gardenPartyImg, caption: "Summer Garden Party with Live Guitar" },
 ];
 
-const eventsImages: PlaceholderImage[] = [
-  { caption: "Christmas Celebration, 2024", aspect: "aspect-video", hue: "bg-primary/10" },
-  { caption: "Birthday Party", aspect: "aspect-square", hue: "bg-accent/10" },
-  { caption: "Summer BBQ", aspect: "aspect-video", hue: "bg-secondary" },
-  { caption: "Community Outing, Spring 2024", aspect: "aspect-square", hue: "bg-primary/8" },
-  { caption: "Staff Awards Ceremony", aspect: "aspect-video", hue: "bg-accent/12" },
-  { caption: "Easter Egg Hunt", aspect: "aspect-square", hue: "bg-primary/12" },
-  { caption: "Halloween Fun", aspect: "aspect-video", hue: "bg-secondary" },
-  { caption: "New Year's Celebration", aspect: "aspect-square", hue: "bg-accent/10" },
+const propertyImages: GalleryImage[] = [
+  { src: wateringPlantsImg, caption: "Our Gardens — Watering the Plants" },
+  { src: gardeningPottingImg, caption: "Rear Garden — Potting Area" },
+  { src: gardenPartyImg, caption: "Garden & Outdoor Space" },
 ];
 
-const ImagePlaceholder = ({ image }: { image: PlaceholderImage }) => (
-  <div className="group relative overflow-hidden rounded-2xl cursor-pointer">
-    <div className={`${image.aspect} ${image.hue} flex items-center justify-center transition-all duration-300 group-hover:scale-105`}>
-      <Camera className="w-8 h-8 text-muted-foreground/30" strokeWidth={1.5} />
-    </div>
-    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-primary/80 to-transparent p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-      <span className="text-xs font-medium text-primary-foreground">{image.caption}</span>
-    </div>
-  </div>
-);
+const imagesForTab: Record<Tab, GalleryImage[]> = {
+  "In the Home": homeImages,
+  "Out & About": outImages,
+  "Our Property": propertyImages,
+};
 
 const Gallery = () => {
   const [activeTab, setActiveTab] = useState<Tab>("In the Home");
+  const [lightbox, setLightbox] = useState<GalleryImage | null>(null);
 
   return (
     <Layout>
+      {lightbox && (
+        <div
+          className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4"
+          onClick={() => setLightbox(null)}
+        >
+          <button
+            onClick={() => setLightbox(null)}
+            className="absolute top-6 right-6 text-white/80 hover:text-white transition-colors"
+          >
+            <X size={32} />
+          </button>
+          <img
+            src={lightbox.src}
+            alt={lightbox.caption}
+            className="max-w-full max-h-[85vh] rounded-xl object-contain"
+            onClick={(e) => e.stopPropagation()}
+          />
+          <p className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white text-sm font-medium bg-black/50 px-4 py-2 rounded-full">
+            {lightbox.caption}
+          </p>
+        </div>
+      )}
+
       <section className="section-padding">
         <div className="container-narrow">
           <FadeIn>
@@ -79,7 +86,6 @@ const Gallery = () => {
             </p>
           </FadeIn>
 
-          {/* Tabs */}
           <FadeIn delay={0.1}>
             <div className="flex flex-wrap justify-center gap-2 mt-12 mb-12">
               {tabs.map((tab) => (
@@ -98,72 +104,28 @@ const Gallery = () => {
             </div>
           </FadeIn>
 
-          {/* In the Home — Masonry grid */}
-          {activeTab === "In the Home" && (
-            <FadeIn>
-              <div className="columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
-                {homeImages.map((img, i) => (
-                  <ImagePlaceholder key={i} image={img} />
-                ))}
-              </div>
-            </FadeIn>
-          )}
-
-          {/* Out in the Community — Scroll strip + grid */}
-          {activeTab === "Out in the Community" && (
-            <FadeIn>
-              <div className="overflow-x-auto pb-4 -mx-5 px-5 mb-8">
-                <div className="flex gap-4" style={{ width: "max-content" }}>
-                  {communityImages.slice(0, 6).map((img, i) => (
-                    <div key={i} className="w-72 flex-shrink-0">
-                      <ImagePlaceholder image={{ ...img, aspect: "aspect-video" }} />
+          <FadeIn>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              {imagesForTab[activeTab].map((img, i) => (
+                <div
+                  key={`${activeTab}-${i}`}
+                  className="group relative overflow-hidden rounded-xl cursor-pointer"
+                  onClick={() => setLightbox(img)}
+                >
+                  <div className="aspect-[4/5] overflow-hidden">
+                    <img
+                      src={img.src}
+                      alt={img.caption}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                    />
+                  </div>
+                  <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/50 transition-colors duration-300 flex items-end">
+                    <div className="p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                      <span className="text-sm font-medium text-primary-foreground">{img.caption}</span>
                     </div>
-                  ))}
+                  </div>
                 </div>
-              </div>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {communityImages.slice(6).map((img, i) => (
-                  <ImagePlaceholder key={i} image={img} />
-                ))}
-              </div>
-            </FadeIn>
-          )}
-
-          {/* Events — Timeline-style */}
-          {activeTab === "Events & Celebrations" && (
-            <FadeIn>
-              <div className="relative">
-                <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-border" />
-                <div className="space-y-8">
-                  {eventsImages.map((img, i) => (
-                    <div
-                      key={i}
-                      className={`flex flex-col md:flex-row items-center gap-6 ${
-                        i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                      }`}
-                    >
-                      <div className="w-full md:w-5/12">
-                        <ImagePlaceholder image={img} />
-                      </div>
-                      <div className="hidden md:flex w-2/12 justify-center">
-                        <div className="w-3 h-3 rounded-full bg-accent" />
-                      </div>
-                      <div className="w-full md:w-5/12 text-center md:text-left">
-                        <p className="text-sm font-medium text-foreground/80">{img.caption}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </FadeIn>
-          )}
-
-          {/* Admin note */}
-          <FadeIn delay={0.15}>
-            <div className="mt-16 p-6 rounded-2xl bg-secondary text-center">
-              <p className="text-sm text-muted-foreground">
-                <span className="font-medium text-foreground/70">📷 Upload Photos:</span> To add your real photos, click any image placeholder and upload directly.
-              </p>
+              ))}
             </div>
           </FadeIn>
         </div>
