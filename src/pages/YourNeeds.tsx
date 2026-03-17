@@ -21,8 +21,8 @@ const needs = [
   },
   {
     icon: Activity,
-    title: "Complex & Enhanced Care",
-    desc: "Specialist support for individuals with complex behavioural, physical, or medical needs.",
+    title: "Enhanced Care",
+    desc: "Tailored support for individuals with behavioural, physical, or medical needs.",
   },
   {
     icon: Sparkles,

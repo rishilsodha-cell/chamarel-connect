@@ -85,7 +85,7 @@ const Index = () => {
           </FadeIn>
           <FadeIn delay={0.15}>
             <p className="mt-6 text-lg md:text-xl text-primary-foreground/85 max-w-2xl leading-relaxed">
-              At Chamarel Healthcare, we provide compassionate, person-centred care for adults with learning disabilities, autism, mental health needs, and complex conditions — delivered in London and the surrounding community.
+              At Chamarel Healthcare, we provide compassionate, person-centred care for adults with learning disabilities, autism, and mental health needs — delivered in London and the surrounding community.
             </p>
           </FadeIn>
           <FadeIn delay={0.3}>
