@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import FadeIn from "@/components/FadeIn";
+import residentialCareImg from "@/assets/photos/residential-care-home.png";
+import supportedLivingImg from "@/assets/photos/supported-living.png";
 
 const supports = [
   {
