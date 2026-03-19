@@ -104,8 +104,6 @@ const Index = () => {
       </FadeIn>
       <YourNeedsSection homepage />
 
-      {/* Our Home */}
-      <OurHome />
 
       {/* Moments That Matter — Photo Strip */}
       <section className="py-16">
