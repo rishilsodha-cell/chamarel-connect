@@ -8,7 +8,7 @@ const supports = [
   {
     title: "Residential Care Home",
     desc: "Our purpose-built residential care home provides a safe, warm and homely environment with 24/7 specialist support. Designed with dignity and independence at its heart.",
-    photo: "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=600",
+    photo: residentialCareImg,
     cta: "Call Us Now",
     href: "tel:01954789856",
     external: false,
