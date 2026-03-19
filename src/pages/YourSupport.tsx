@@ -1,12 +1,14 @@
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import FadeIn from "@/components/FadeIn";
+import residentialCareImg from "@/assets/photos/residential-care-home.png";
+import supportedLivingImg from "@/assets/photos/supported-living.png";
 
 const supports = [
   {
     title: "Residential Care Home",
     desc: "Our purpose-built residential care home provides a safe, warm and homely environment with 24/7 specialist support. Designed with dignity and independence at its heart.",
-    photo: "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=600",
+    photo: residentialCareImg,
     cta: "Call Us Now",
     href: "tel:01954789856",
     external: false,
@@ -15,7 +17,7 @@ const supports = [
   {
     title: "Supported Living",
     desc: "Live independently in your own home or shared setting with the right level of flexible, person-centred support around you.",
-    photo: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600",
+    photo: supportedLivingImg,
     cta: "Find Out More",
     href: "/referral",
     external: false,
