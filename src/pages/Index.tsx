@@ -7,7 +7,7 @@ import { toast } from "sonner";
 import Layout from "@/components/Layout";
 import FadeIn from "@/components/FadeIn";
 import InstagramGrid from "@/components/InstagramGrid";
-import OurHome from "@/components/OurHome";
+
 import YourNeedsSection from "@/components/YourNeedsSection";
 import AreasWeServe from "@/components/AreasWeServe";
 import heroImage from "@/assets/hero-care.jpg";
@@ -104,8 +104,6 @@ const Index = () => {
       </FadeIn>
       <YourNeedsSection homepage />
 
-      {/* Our Home */}
-      <OurHome />
 
       {/* Moments That Matter — Photo Strip */}
       <section className="py-16">
