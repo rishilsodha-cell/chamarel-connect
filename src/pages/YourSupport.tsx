@@ -17,7 +17,7 @@ const supports = [
   {
     title: "Supported Living",
     desc: "Live independently in your own home or shared setting with the right level of flexible, person-centred support around you.",
-    photo: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600",
+    photo: supportedLivingImg,
     cta: "Find Out More",
     href: "/referral",
     external: false,
