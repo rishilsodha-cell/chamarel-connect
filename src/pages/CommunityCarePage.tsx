@@ -143,6 +143,8 @@ const CommunityCarePage = () => (
       </div>
     </section>
 
+    <QualityLifeSections />
+
     {/* Referral CTA */}
     <section className="py-20 bg-primary">
       <div className="container-narrow max-w-2xl text-center">

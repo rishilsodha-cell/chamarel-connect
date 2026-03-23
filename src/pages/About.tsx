@@ -156,6 +156,7 @@ const About = () => (
       </div>
     </section>
 
+    <QualityLifeSections />
     <AreasWeServe />
   </Layout>
 );
