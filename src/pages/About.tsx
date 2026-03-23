@@ -2,6 +2,7 @@ import { Heart, Compass, Users, Camera, Quote, Facebook, ThumbsUp } from "lucide
 import Layout from "@/components/Layout";
 import FadeIn from "@/components/FadeIn";
 import AreasWeServe from "@/components/AreasWeServe";
+import QualityLifeSections from "@/components/QualityLifeSections";
 
 const cards = [
   { icon: Heart, title: "Our Values", desc: "Compassion, dignity, and emotional intelligence at the heart of everything we do." },
@@ -155,6 +156,7 @@ const About = () => (
       </div>
     </section>
 
+    <QualityLifeSections />
     <AreasWeServe />
   </Layout>
 );
