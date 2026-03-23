@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import Layout from "@/components/Layout";
 import FadeIn from "@/components/FadeIn";
+import QualityLifeSections from "@/components/QualityLifeSections";
 
 import drivewayDuskImg from "@/assets/photos/driveway-dusk.png";
 import wateringPlantsImg from "@/assets/photos/watering-plants.png";
