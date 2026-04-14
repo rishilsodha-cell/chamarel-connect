@@ -16,7 +16,6 @@ import CommunityCarePage from "./pages/CommunityCarePage.tsx";
 import Gallery from "./pages/Gallery.tsx";
 import Stories from "./pages/Stories.tsx";
 import NotFound from "./pages/NotFound.tsx";
-import Paresh from "./pages/Paresh.tsx";
 
 const queryClient = new QueryClient();
 
@@ -39,7 +38,6 @@ const App = () => (
           <Route path="/community-care-services" element={<CommunityCarePage />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/stories" element={<Stories />} />
-          <Route path="/paresh" element={<Paresh />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
