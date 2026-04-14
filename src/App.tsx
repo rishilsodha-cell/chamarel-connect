@@ -16,6 +16,7 @@ import CommunityCarePage from "./pages/CommunityCarePage.tsx";
 import Gallery from "./pages/Gallery.tsx";
 import Stories from "./pages/Stories.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import Paresh from "./pages/Paresh.tsx";
 
 const queryClient = new QueryClient();
 
