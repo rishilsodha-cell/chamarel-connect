@@ -14,7 +14,7 @@ const InstagramGrid = () => (
       </FadeIn>
       <div className="w-full max-w-[1200px] mx-auto">
         {/* @ts-ignore */}
-        <behold-widget feed-id="1pnKiplpQrZiCgmIsOfJ"></behold-widget>
+        <behold-widget feed-id="fKrNbOuUZjlkttJLOmjp"></behold-widget>
       </div>
       <FadeIn delay={0.3}>
         <div className="text-center mt-10">
