@@ -7,6 +7,7 @@ import { toast } from "sonner";
 import Layout from "@/components/Layout";
 import FadeIn from "@/components/FadeIn";
 import InstagramGrid from "@/components/InstagramGrid";
+import NewsletterSection from "@/components/NewsletterSection";
 
 import YourNeedsSection from "@/components/YourNeedsSection";
 import AreasWeServe from "@/components/AreasWeServe";
@@ -175,6 +176,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Monthly Newsletter */}
+      <NewsletterSection />
 
       {/* Instagram Feed */}
       <InstagramGrid />

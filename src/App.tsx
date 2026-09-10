@@ -17,6 +17,7 @@ import Gallery from "./pages/Gallery.tsx";
 import Stories from "./pages/Stories.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import Paresh from "./pages/Paresh.tsx";
+import NewsletterArchive from "./pages/NewsletterArchive.tsx";
 
 const queryClient = new QueryClient();
 
@@ -40,6 +41,8 @@ const App = () => (
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/stories" element={<Stories />} />
           <Route path="/paresh" element={<Paresh />} />
+          <Route path="/newsletter" element={<NewsletterArchive />} />
+          <Route path="/newsletters" element={<NewsletterArchive />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
