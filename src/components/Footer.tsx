@@ -15,6 +15,7 @@ const Footer = () => (
           <h4 className="text-sm font-semibold uppercase tracking-wide mb-4">Quick Links</h4>
           <ul className="space-y-2 text-sm text-primary-foreground/70">
             <li><Link to="/about" className="hover:text-primary-foreground transition-colors">About Us</Link></li>
+            <li><Link to="/newsletter" className="hover:text-primary-foreground transition-colors">Newsletter</Link></li>
             <li><Link to="/careers" className="hover:text-primary-foreground transition-colors">Careers</Link></li>
             <li><Link to="/privacy" className="hover:text-primary-foreground transition-colors">Privacy Policy</Link></li>
             <li><a href="/#get-in-touch" className="hover:text-primary-foreground transition-colors">Contact Us</a></li>
