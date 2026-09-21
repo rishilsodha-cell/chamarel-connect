@@ -39,7 +39,7 @@ const Footer = () => (
       {/* Social strip */}
       <div className="border-t border-primary-foreground/10 mt-12 pt-8">
         <p className="text-center text-sm text-primary-foreground/70 mb-4">Stay connected with Chamarel Healthcare</p>
-        <div className="flex justify-center gap-4">
+        <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
           {[
             { icon: Instagram, label: "Instagram", href: "https://instagram.com/chamarelhealthcare" },
             { icon: Facebook, label: "Facebook", href: "https://facebook.com/chamarelhealthcare" },
