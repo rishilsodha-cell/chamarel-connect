@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Linkedin, Facebook, Instagram, Mail, ArrowRight } from "lucide-react";
+import { Linkedin, Facebook, Instagram, Mail, Phone, ArrowRight } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -8,6 +8,7 @@ import Layout from "@/components/Layout";
 import FadeIn from "@/components/FadeIn";
 import InstagramGrid from "@/components/InstagramGrid";
 import NewsletterSection from "@/components/NewsletterSection";
+import { enquiryEmail, enquiryEmailHref, enquiryPhone, enquiryPhoneHref } from "@/data/contact";
 
 import YourNeedsSection from "@/components/YourNeedsSection";
 import AreasWeServe from "@/components/AreasWeServe";
@@ -193,10 +194,32 @@ const Index = () => {
             <FadeIn delay={0.1}>
               <div>
                 <h3 className="text-lg font-medium mb-4">Contact Information</h3>
-                <a href="mailto:enquiry@chamarelhealthcare.com" className="flex items-center gap-2 text-foreground/80 hover:text-primary transition-colors">
+                <a href={enquiryEmailHref} className="flex items-center gap-2 text-foreground/80 hover:text-primary transition-colors">
                   <Mail size={18} strokeWidth={1.5} />
-                  enquiry@chamarelhealthcare.com
+                  {enquiryEmail}
                 </a>
+                <a href={enquiryPhoneHref} className="flex items-center gap-2 mt-3 text-foreground/80 hover:text-primary transition-colors">
+                  <Phone size={18} strokeWidth={1.5} />
+                  {enquiryPhone}
+                </a>
+
+                <div className="flex flex-wrap gap-3 mt-5">
+                  <a
+                    href={enquiryEmailHref}
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-full text-sm font-semibold hover:-translate-y-0.5 transition-all duration-250 hover:shadow-lg"
+                  >
+                    <Mail size={16} strokeWidth={1.5} />
+                    Email Us
+                  </a>
+                  <a
+                    href={enquiryPhoneHref}
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold border-2 transition-all duration-250 hover:-translate-y-0.5 hover:shadow-lg"
+                    style={{ borderColor: "#00706B", color: "#00706B" }}
+                  >
+                    <Phone size={16} strokeWidth={1.5} />
+                    Call {enquiryPhone}
+                  </a>
+                </div>
 
                 <div className="flex items-center gap-2 mt-3" style={{ color: "#444444", fontSize: 14 }}>
                   <span>🕐</span> Monday – Friday, 9:00am – 5:00pm

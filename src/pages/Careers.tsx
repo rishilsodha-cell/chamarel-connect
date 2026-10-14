@@ -1,6 +1,7 @@
 import Layout from "@/components/Layout";
 import FadeIn from "@/components/FadeIn";
-import { Briefcase, GraduationCap, Heart, Clock, Linkedin } from "lucide-react";
+import { Briefcase, GraduationCap, Heart, Clock, Linkedin, Phone } from "lucide-react";
+import { enquiryPhone, enquiryPhoneHref } from "@/data/contact";
 
 const perks = [
   { icon: Heart, title: "Values-Based Culture", desc: "Join a team that genuinely cares. We recruit for character and train for skill." },
@@ -20,12 +21,22 @@ const Careers = () => (
           <p className="mt-8 text-lg leading-relaxed text-foreground/80">
             We're looking for compassionate, dedicated people to join our growing team. At Chamarel Healthcare, we invest in our staff through ongoing training in Positive Behaviour Support (PBS), trauma-informed care, and professional development. We are proud to be a National Living Wage employer.
           </p>
-          <a
-            href="mailto:enquiry@chamarelhealthcare.com?subject=Career%20Enquiry"
-            className="inline-block mt-8 px-8 py-4 bg-primary text-primary-foreground rounded-full font-semibold hover:-translate-y-0.5 transition-all duration-250 hover:shadow-lg"
-          >
-            View Current Vacancies
-          </a>
+          <div className="flex flex-wrap gap-4 mt-8">
+            <a
+              href="#apply"
+              className="inline-block px-8 py-4 bg-primary text-primary-foreground rounded-full font-semibold hover:-translate-y-0.5 transition-all duration-250 hover:shadow-lg"
+            >
+              Apply Now
+            </a>
+            <a
+              href={enquiryPhoneHref}
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold border-2 transition-all duration-250 hover:-translate-y-0.5 hover:shadow-lg"
+              style={{ borderColor: "#00706B", color: "#00706B" }}
+            >
+              <Phone size={18} strokeWidth={1.5} />
+              Call {enquiryPhone}
+            </a>
+          </div>
         </FadeIn>
       </div>
     </section>

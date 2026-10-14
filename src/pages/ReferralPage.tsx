@@ -6,6 +6,7 @@ import { toast } from "sonner";
 import { ArrowRight, ShieldCheck, Zap, Brain, Handshake, ClipboardList } from "lucide-react";
 import Layout from "@/components/Layout";
 import FadeIn from "@/components/FadeIn";
+import { enquiryEmail, enquiryEmailHref, enquiryPhone, enquiryPhoneHref } from "@/data/contact";
 
 const schema = z.object({
   fullName: z.string().trim().min(1, "Required").max(100),
@@ -195,8 +196,11 @@ const ReferralPage = () => {
                 {/* Contact box */}
                 <div className="mt-8 rounded-xl p-6 text-white" style={{ backgroundColor: "#00706B" }}>
                   <p className="text-sm font-medium mb-2">Prefer to speak to someone directly?</p>
-                  <a href="mailto:enquiry@chamarelhealthcare.com" className="text-xl font-bold text-white block mb-1">
-                    📞 enquiry@chamarelhealthcare.com
+                  <a href={enquiryPhoneHref} className="text-xl font-bold text-white block mb-1">
+                    📞 {enquiryPhone}
+                  </a>
+                  <a href={enquiryEmailHref} className="text-sm font-semibold text-white/90 block mb-1 underline underline-offset-2 hover:text-white">
+                    ✉️ {enquiryEmail}
                   </a>
                   <p className="text-white/80" style={{ fontSize: 13 }}>
                     Our referral team is available Monday to Friday, 9am – 5pm
@@ -218,6 +222,9 @@ const ReferralPage = () => {
           <div className="flex flex-wrap justify-center gap-4">
             <a href="/#get-in-touch" className="px-8 py-4 bg-white rounded-full font-semibold hover:-translate-y-0.5 transition-all duration-250 hover:shadow-lg" style={{ color: "#00706B" }}>
               Contact Us
+            </a>
+            <a href={enquiryPhoneHref} className="px-8 py-4 rounded-full font-semibold border-2 border-white text-white hover:-translate-y-0.5 transition-all duration-250 hover:bg-white/10">
+              Call {enquiryPhone}
             </a>
             <Link to="/your-needs" className="px-8 py-4 rounded-full font-semibold border-2 border-white text-white hover:-translate-y-0.5 transition-all duration-250 hover:bg-white/10">
               View Our Services
