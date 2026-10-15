@@ -1,7 +1,8 @@
 import Layout from "@/components/Layout";
 import FadeIn from "@/components/FadeIn";
 import { Briefcase, GraduationCap, Heart, Clock, Linkedin, Phone } from "lucide-react";
-import { enquiryPhone, enquiryPhoneHref } from "@/data/contact";
+import { enquiryEmail, enquiryEmailHref, enquiryPhone, enquiryPhoneHref } from "@/data/contact";
+import { careersForm } from "@/data/forms";
 
 const perks = [
   { icon: Heart, title: "Values-Based Culture", desc: "Join a team that genuinely cares. We recruit for character and train for skill." },
@@ -57,6 +58,43 @@ const Careers = () => (
             </FadeIn>
           ))}
         </div>
+      </div>
+    </section>
+
+    {/* Application form */}
+    <section className="section-padding" id="apply">
+      <div className="container-narrow max-w-3xl">
+        <FadeIn>
+          <h2 className="text-3xl font-medium text-center mb-3">Apply to Join Us</h2>
+          <p className="text-center text-muted-foreground mb-10 max-w-xl mx-auto">
+            Fill this in and a member of our team will come back to you. You do not need previous
+            care experience — we recruit for character and train for skill.
+          </p>
+        </FadeIn>
+        <FadeIn delay={0.1}>
+          <div className="bg-card rounded-2xl overflow-hidden" style={{ boxShadow: "var(--card-shadow)" }}>
+            <iframe
+              src={careersForm.embedUrl}
+              title="Chamarel Healthcare application form"
+              loading="lazy"
+              /* Measured against the live form: 3031px at 768w, 3324px at 390w.
+                 Sized generously so the embed never gets its own scrollbar. */
+              className="w-full border-0 h-[3500px] sm:h-[3200px]"
+            >
+              Loading…
+            </iframe>
+          </div>
+          <p className="text-center text-sm text-muted-foreground mt-6">
+            Form not loading?{" "}
+            <a href={careersForm.openUrl} target="_blank" rel="noopener noreferrer" className="underline text-accent hover:text-primary">
+              Open it in a new tab
+            </a>
+            , call{" "}
+            <a href={enquiryPhoneHref} className="underline text-accent hover:text-primary">{enquiryPhone}</a>
+            {" "}or email{" "}
+            <a href={enquiryEmailHref} className="underline text-accent hover:text-primary">{enquiryEmail}</a>.
+          </p>
+        </FadeIn>
       </div>
     </section>
 

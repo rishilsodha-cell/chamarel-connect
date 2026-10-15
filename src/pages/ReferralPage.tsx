@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -7,6 +8,8 @@ import { ArrowRight, ShieldCheck, Zap, Brain, Handshake, ClipboardList } from "l
 import Layout from "@/components/Layout";
 import FadeIn from "@/components/FadeIn";
 import { enquiryEmail, enquiryEmailHref, enquiryPhone, enquiryPhoneHref } from "@/data/contact";
+import { referralForm } from "@/data/forms";
+import { submitToGoogleForm } from "@/lib/submitToGoogleForm";
 
 const schema = z.object({
   fullName: z.string().trim().min(1, "Required").max(100),
@@ -66,9 +69,33 @@ const ReferralPage = () => {
     resolver: zodResolver(schema),
   });
 
-  const onSubmit = (data: FormData) => {
-    toast.success("Referral submitted! Our team will be in touch within 24 hours.");
-    reset();
+  const [sending, setSending] = useState(false);
+
+  const onSubmit = async (data: FormData) => {
+    setSending(true);
+    try {
+      const f = referralForm.fields;
+      await submitToGoogleForm(referralForm.action, {
+        [f.fullName]: data.fullName,
+        [f.organisation]: data.organisation,
+        [f.jobTitle]: data.jobTitle,
+        [f.email]: data.email,
+        [f.phone]: data.phone,
+        [f.supportType]: data.supportType,
+        [f.urgency]: data.urgency,
+        [f.situation]: data.situation,
+        [f.heardAbout]: data.heardAbout,
+      });
+      toast.success("Referral submitted! Our team will be in touch within 24 hours.");
+      reset();
+    } catch {
+      // A referral that silently vanishes is worse than one that never started.
+      toast.error(`We couldn't submit that referral. Please call ${enquiryPhone} or email ${enquiryEmail}.`, {
+        duration: 10000,
+      });
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -158,12 +185,13 @@ const ReferralPage = () => {
                   </div>
                   <button
                     type="submit"
-                    className="w-full font-bold text-base text-white rounded-xl flex items-center justify-center gap-2 transition-colors"
+                    disabled={sending}
+                    className="w-full font-bold text-base text-white rounded-xl flex items-center justify-center gap-2 transition-colors disabled:opacity-60"
                     style={{ backgroundColor: "#00706B", height: 52 }}
                     onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#005A58")}
                     onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#00706B")}
                   >
-                    Submit Referral <ArrowRight size={18} />
+                    {sending ? "Submitting…" : <>Submit Referral <ArrowRight size={18} /></>}
                   </button>
                   <p className="text-center text-muted-foreground" style={{ fontSize: 12 }}>
                     All referrals are handled confidentially by our senior team in accordance with GDPR and our{" "}

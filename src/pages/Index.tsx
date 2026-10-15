@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Linkedin, Facebook, Instagram, Mail, Phone, ArrowRight } from "lucide-react";
 import { useForm } from "react-hook-form";
@@ -9,6 +10,8 @@ import FadeIn from "@/components/FadeIn";
 import InstagramGrid from "@/components/InstagramGrid";
 import NewsletterSection from "@/components/NewsletterSection";
 import { enquiryEmail, enquiryEmailHref, enquiryPhone, enquiryPhoneHref } from "@/data/contact";
+import { contactForm } from "@/data/forms";
+import { submitToGoogleForm } from "@/lib/submitToGoogleForm";
 
 import YourNeedsSection from "@/components/YourNeedsSection";
 import AreasWeServe from "@/components/AreasWeServe";
@@ -55,10 +58,27 @@ const Index = () => {
     resolver: zodResolver(contactSchema),
   });
 
-  const onSubmit = (data: ContactForm) => {
-    console.log(data);
-    toast.success("Message sent! We'll be in touch soon.");
-    reset();
+  const [sending, setSending] = useState(false);
+
+  const onSubmit = async (data: ContactForm) => {
+    setSending(true);
+    try {
+      await submitToGoogleForm(contactForm.action, {
+        [contactForm.fields.firstName]: data.firstName,
+        [contactForm.fields.lastName]: data.lastName,
+        [contactForm.fields.email]: data.email,
+        [contactForm.fields.message]: data.message,
+      });
+      toast.success("Message sent! We'll be in touch within 24 hours.");
+      reset();
+    } catch {
+      // Never claim an enquiry was sent when it was not.
+      toast.error(`We couldn't send that. Please call ${enquiryPhone} or email ${enquiryEmail}.`, {
+        duration: 10000,
+      });
+    } finally {
+      setSending(false);
+    }
   };
 
   const inputClass = "w-full bg-card border-0 ring-1 ring-primary/10 focus:ring-2 focus:ring-primary transition-all p-4 rounded-xl text-sm outline-none";
@@ -274,8 +294,8 @@ const Index = () => {
                   <textarea {...register("message")} placeholder="Message" rows={4} className={inputClass + " resize-none"} />
                   {errors.message && <p className="text-destructive text-xs mt-1">{errors.message.message}</p>}
                 </div>
-                <button type="submit" className="w-full md:w-auto px-8 py-4 bg-primary text-primary-foreground rounded-full font-semibold hover:-translate-y-0.5 transition-all duration-250 hover:shadow-lg">
-                  Send Message
+                <button type="submit" disabled={sending} className="w-full md:w-auto px-8 py-4 bg-primary text-primary-foreground rounded-full font-semibold hover:-translate-y-0.5 transition-all duration-250 hover:shadow-lg disabled:opacity-60 disabled:hover:translate-y-0">
+                  {sending ? "Sending…" : "Send Message"}
                 </button>
               </form>
             </FadeIn>
