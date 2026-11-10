@@ -24,7 +24,7 @@ const Index = () => {
           </FadeIn>
           <FadeIn delay={0.15}>
             <p className="mt-6 text-lg md:text-xl text-primary-foreground/85 max-w-2xl leading-relaxed">
-              Supported living and domiciliary care for adults with learning disabilities, autism and mental health needs, across London and Cambridgeshire. Five homes, one team, and vacancies now — see inside before you decide.
+              Supported living and domiciliary care for adults with learning disabilities, autism and mental health needs, across London and Cambridgeshire.
             </p>
           </FadeIn>
           <FadeIn delay={0.3}>

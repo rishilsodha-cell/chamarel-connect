@@ -2,10 +2,7 @@ import { MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 import FadeIn from "@/components/FadeIn";
 
-const locations = [
-  "North London", "South London", "North West London", "Cambridgeshire",
-  "Longstanton", "Surbiton", "Middlesex", "Barnet", "Wembley", "Edgware", "Ruislip",
-];
+const locations = ["North West London", "Cambridgeshire"];
 
 interface Props {
   slim?: boolean;
@@ -20,12 +17,12 @@ const AreasWeServe = ({ slim = false }: Props) => (
         </h2>
         {!slim && (
           <p className="text-center text-muted-foreground max-w-[600px] mx-auto mb-8">
-            Chamarel Healthcare provides specialist care and community support across London and the surrounding areas. Contact us to discuss support in your specific location.
+            Chamarel Healthcare provides specialist care and community support across North West London and Cambridgeshire. Contact us to discuss support in your specific location.
           </p>
         )}
         {slim && (
           <p className="text-center text-muted-foreground max-w-[600px] mx-auto mb-8 text-sm">
-            Specialist care and community support across London and the surrounding areas.
+            Specialist care and community support across North West London and Cambridgeshire.
           </p>
         )}
       </FadeIn>
