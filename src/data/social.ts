@@ -10,7 +10,7 @@ import { Instagram, Facebook, Linkedin, type LucideIcon } from "lucide-react";
  */
 export const SOCIAL_URLS = {
   linkedin: "https://www.linkedin.com/company/chamarel-healthcare",
-  instagram: "https://www.instagram.com/chamarelhealthcare",
+  instagram: "https://www.instagram.com/chamarelhealthcare/",
   facebook: null as string | null,
 };
 
