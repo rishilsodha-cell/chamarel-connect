@@ -1,19 +1,12 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
-import About from "./pages/About.tsx";
 import YourNeeds from "./pages/YourNeeds.tsx";
-import YourSupport from "./pages/YourSupport.tsx";
-import Referrals from "./pages/Referrals.tsx";
-import ReferralPage from "./pages/ReferralPage.tsx";
 import Careers from "./pages/Careers.tsx";
 import Privacy from "./pages/Privacy.tsx";
-import CommunityCare from "./pages/CommunityCare.tsx";
-import CommunityCarePage from "./pages/CommunityCarePage.tsx";
-import Gallery from "./pages/Gallery.tsx";
 import Stories from "./pages/Stories.tsx";
 import OurHomes from "./pages/OurHomes.tsx";
 import NotFound from "./pages/NotFound.tsx";
@@ -30,18 +23,18 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/about" element={<Navigate to="/" replace />} />
           <Route path="/your-needs" element={<YourNeeds />} />
-          <Route path="/your-support" element={<YourSupport />} />
-          <Route path="/referrals" element={<Referrals />} />
-          <Route path="/referral" element={<ReferralPage />} />
+          <Route path="/your-support" element={<Navigate to="/" replace />} />
+          <Route path="/referrals" element={<Navigate to="/" replace />} />
+          <Route path="/referral" element={<Navigate to="/" replace />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/privacy" element={<Privacy />} />
-          <Route path="/community-care" element={<CommunityCare />} />
-          <Route path="/community-care-services" element={<CommunityCarePage />} />
+          <Route path="/community-care" element={<Navigate to="/" replace />} />
+          <Route path="/community-care-services" element={<Navigate to="/" replace />} />
           <Route path="/our-homes" element={<OurHomes />} />
           <Route path="/homes" element={<OurHomes />} />
-          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/gallery" element={<Navigate to="/" replace />} />
           <Route path="/stories" element={<Stories />} />
           <Route path="/paresh" element={<Paresh />} />
           <Route path="/newsletter" element={<NewsletterArchive />} />

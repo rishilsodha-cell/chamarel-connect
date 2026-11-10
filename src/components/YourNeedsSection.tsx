@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
 import gardeningPairImg from "@/assets/photos/gardening-pair.png";
-import wateringPlantsImg from "@/assets/photos/watering-plants.png";
 
 const needs = [
   {
@@ -11,7 +10,7 @@ const needs = [
     image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400",
     bg: "bg-accent/20",
     cta: "Find Out More",
-    path: "/#get-in-touch",
+    path: "#contact",
     body: "At Chamarel Healthcare, we understand that every autistic person experiences the world differently. Our specialist autism support is built around each individual's unique communication style, sensory preferences, and personal strengths — never a one-size-fits-all approach.",
     bullets: [
       "Structured daily routines that create predictability, safety, and confidence",
@@ -29,7 +28,7 @@ const needs = [
     image: "https://images.unsplash.com/photo-1531983412531-1f49a365ffed?w=400",
     bg: "bg-amber-100",
     cta: "Find Out More",
-    path: "/#get-in-touch",
+    path: "#contact",
     body: "We provide specialist, values-led support for adults with mild, moderate, and profound learning disabilities. Our approach is rooted in Positive Behaviour Support (PBS) and person-centred planning — ensuring every individual is at the heart of decisions about their own life.",
     bullets: [
       "Fully co-produced care plans developed with the individual, their family, and professional network",
@@ -47,7 +46,7 @@ const needs = [
     image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400",
     bg: "bg-purple-100",
     cta: "Find Out More",
-    path: "/#get-in-touch",
+    path: "#contact",
     body: `Our mental health support services are designed for adults with complex mental health needs who require more than clinical intervention — they need consistency, compassion, and a team that truly understands their journey.
 
 We embed trauma-informed practice and Positive Behaviour Support (PBS) into every care plan, creating psychologically safe environments where people feel heard, respected, and empowered to recover.`,
@@ -60,26 +59,6 @@ We embed trauma-informed practice and Positive Behaviour Support (PBS) into ever
       "CQC-regulated services delivered by emotionally intelligent, highly trained support workers",
     ],
     closing: "We believe mental health care should be relational, inclusive, and future-focused — helping each person move from surviving to truly thriving.",
-  },
-  {
-    title: "Chamarel Community Care Services",
-    subtitle: "Person-centred support delivered where it matters most — in your home and community",
-    image: wateringPlantsImg,
-    bg: "bg-emerald-100",
-    cta: "Learn About Community Care",
-    path: "/community-care-services",
-    body: `Chamarel Community Care Services is our dedicated community and outreach division, providing flexible, person-centred support to adults across London and the surrounding areas.
-
-We support adults with learning disabilities, autism, and mental health needs to live safely, confidently, and independently — in their own homes and within their local communities.`,
-    bullets: [
-      "One-to-one outreach support tailored to individual goals and daily routines",
-      "Support with personal care, medication management, and daily living tasks",
-      "Community access support — shopping, appointments, social activities, and travel training",
-      "Wellbeing activities including gardening, cooking, arts and crafts, and supported outings",
-      "Supported holidays and day visits that bring new experiences and joyful memories",
-      "Flexible support packages reviewed regularly to match changing needs",
-    ],
-    closing: "Whether someone needs a few hours of support each week or intensive daily care, our community teams are there — consistent, compassionate, and committed.",
   },
 ];
 

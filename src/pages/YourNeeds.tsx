@@ -23,12 +23,12 @@ const YourNeeds = () => (
     <section className="section-padding bg-secondary">
       <div className="container-narrow text-center">
         <FadeIn>
-          <Link
-            to="/referrals"
+          <a
+            href="#contact"
             className="inline-block px-8 py-4 bg-primary text-primary-foreground rounded-full font-semibold hover:-translate-y-0.5 transition-all duration-250 hover:shadow-lg"
           >
-            Make a Referral
-          </Link>
+            Contact Us
+          </a>
         </FadeIn>
       </div>
     </section>

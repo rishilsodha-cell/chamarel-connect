@@ -2,7 +2,7 @@ import { SOCIAL_URLS } from "@/data/social";
 import Layout from "@/components/Layout";
 import FadeIn from "@/components/FadeIn";
 import { Briefcase, GraduationCap, Heart, Clock, Linkedin, Phone } from "lucide-react";
-import { enquiryEmail, enquiryEmailHref, enquiryPhone, enquiryPhoneHref } from "@/data/contact";
+import { enquiryEmail, enquiryEmailHref, enquiryPhone, enquiryPhoneHref, secondPhone, secondPhoneHref } from "@/data/contact";
 import { careersForm } from "@/data/forms";
 
 const perks = [
@@ -37,6 +37,14 @@ const Careers = () => (
             >
               <Phone size={18} strokeWidth={1.5} />
               Call {enquiryPhone}
+            </a>
+            <a
+              href={secondPhoneHref}
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold border-2 transition-all duration-250 hover:-translate-y-0.5 hover:shadow-lg"
+              style={{ borderColor: "#00706B", color: "#00706B" }}
+            >
+              <Phone size={18} strokeWidth={1.5} />
+              Call {secondPhone}
             </a>
           </div>
         </FadeIn>
@@ -92,7 +100,9 @@ const Careers = () => (
             </a>
             , call{" "}
             <a href={enquiryPhoneHref} className="underline text-accent hover:text-primary">{enquiryPhone}</a>
-            {" "}or email{" "}
+            {" "}or{" "}
+            <a href={secondPhoneHref} className="underline text-accent hover:text-primary">{secondPhone}</a>
+            , or email{" "}
             <a href={enquiryEmailHref} className="underline text-accent hover:text-primary">{enquiryEmail}</a>.
           </p>
         </FadeIn>
