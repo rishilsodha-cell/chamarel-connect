@@ -1,6 +1,8 @@
+import { Fragment } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
+import sensoryRoomImg from "@/assets/homes/perrin-sensory-room-labelled.jpg";
 import gardeningPairImg from "@/assets/photos/gardening-pair.png";
 
 const needs = [
@@ -9,8 +11,6 @@ const needs = [
     subtitle: "Structured, sensory-aware support that celebrates every individual",
     image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400",
     bg: "bg-accent/20",
-    cta: "Find Out More",
-    path: "#contact",
     body: "At Chamarel Healthcare, we understand that every autistic person experiences the world differently. Our specialist autism support is built around each individual's unique communication style, sensory preferences, and personal strengths — never a one-size-fits-all approach.",
     bullets: [
       "Structured daily routines that create predictability, safety, and confidence",
@@ -27,8 +27,6 @@ const needs = [
     subtitle: "Empowering adults to live with confidence, independence, and purpose",
     image: "https://images.unsplash.com/photo-1531983412531-1f49a365ffed?w=400",
     bg: "bg-amber-100",
-    cta: "Find Out More",
-    path: "#contact",
     body: "We provide specialist, values-led support for adults with mild, moderate, and profound learning disabilities. Our approach is rooted in Positive Behaviour Support (PBS) and person-centred planning — ensuring every individual is at the heart of decisions about their own life.",
     bullets: [
       "Fully co-produced care plans developed with the individual, their family, and professional network",
@@ -45,8 +43,6 @@ const needs = [
     subtitle: "Compassionate, trauma-informed care focused on recovery and belonging",
     image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400",
     bg: "bg-purple-100",
-    cta: "Find Out More",
-    path: "#contact",
     body: `Our mental health support services are designed for adults with complex mental health needs who require more than clinical intervention — they need consistency, compassion, and a team that truly understands their journey.
 
 We embed trauma-informed practice and Positive Behaviour Support (PBS) into every care plan, creating psychologically safe environments where people feel heard, respected, and empowered to recover.`,
@@ -62,6 +58,59 @@ We embed trauma-informed practice and Positive Behaviour Support (PBS) into ever
   },
 ];
 
+/**
+ * Sits directly under Autism Support: the sensory room is the concrete example of how we
+ * support autistic people and people whose behaviour can challenge (sensory regulation,
+ * a low-arousal space to calm, de-escalate and recover).
+ */
+const SensoryRoomFeature = () => (
+  <section className="py-16 md:py-20 bg-primary text-primary-foreground">
+    <div className="container-narrow">
+      <div className="grid lg:grid-cols-5 gap-10 lg:gap-14 items-center">
+        <FadeIn className="lg:col-span-3">
+          <a
+            href={sensoryRoomImg}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open the labelled sensory room photo full size"
+            className="block rounded-2xl overflow-hidden ring-1 ring-primary-foreground/15 hover:ring-primary-foreground/40 transition"
+          >
+            <img
+              src={sensoryRoomImg}
+              alt="The sensory room at Perrin House, 145 Perne Road, labelled: cinema facility, mood lighting, tactile sensory board, sensory bubble tube, soft-play matting and tactile wall panels"
+              loading="lazy"
+              className="w-full h-auto"
+            />
+          </a>
+          <p className="mt-2 text-xs text-primary-foreground/60">Tap the photo to see it full size.</p>
+        </FadeIn>
+        <FadeIn delay={0.1} className="lg:col-span-2">
+          <p className="text-xs uppercase tracking-[0.2em] text-accent mb-3">Autism &amp; complex behaviour</p>
+          <h3 className="text-2xl md:text-3xl font-medium mb-4">See the sensory room at Perrin House</h3>
+          <p className="text-primary-foreground/80 leading-relaxed text-sm mb-4">
+            At 145 Perne Road, Cambridge, we built a dedicated sensory room for the people we support
+            who are autistic or whose behaviour can challenge. It gives them a calm, low-arousal space to
+            regulate, to step away when things feel overwhelming, and to enjoy sensory activity on their
+            own terms.
+          </p>
+          <ul className="space-y-1.5 text-sm text-primary-foreground/80 mb-8">
+            <li>• Mood lighting and a sensory bubble tube</li>
+            <li>• Tactile sensory board and padded wall panels</li>
+            <li>• Soft-play matting and bean-bag seating</li>
+            <li>• Cinema projector and screen</li>
+          </ul>
+          <Link
+            to="/our-homes?home=perrin-house"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-primary-foreground text-primary rounded-full font-semibold text-sm hover:-translate-y-0.5 transition-all duration-250 hover:shadow-lg"
+          >
+            See Perrin House <ArrowRight size={16} />
+          </Link>
+        </FadeIn>
+      </div>
+    </div>
+  </section>
+);
+
 interface Props {
   /** Show only the compact homepage version */
   homepage?: boolean;
@@ -74,8 +123,8 @@ const YourNeedsSection = ({ homepage = false }: Props) => (
       const bgColor = i % 2 === 0 ? "bg-background" : "";
 
       return (
+        <Fragment key={need.title}>
         <section
-          key={need.path}
           className={`py-16 md:py-20 ${bgColor}`}
           style={i % 2 !== 0 ? { backgroundColor: "#F9F7F4" } : undefined}
         >
@@ -114,18 +163,13 @@ const YourNeedsSection = ({ homepage = false }: Props) => (
                       <p className="text-foreground/80 leading-relaxed mb-6 text-sm italic">{need.closing}</p>
                     </>
                   )}
-
-                  <a
-                    href={need.path}
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-full font-semibold text-sm hover:-translate-y-0.5 transition-all duration-250 hover:shadow-lg"
-                  >
-                    {need.cta} <ArrowRight size={16} />
-                  </a>
                 </div>
               </FadeIn>
             </div>
           </div>
         </section>
+        {need.title === "Autism Support" && <SensoryRoomFeature />}
+        </Fragment>
       );
     })}
   </>

@@ -130,7 +130,11 @@ const OurHomes = () => {
   useEffect(() => {
     const slug = new URLSearchParams(window.location.search).get("home");
     const match = homes.find((h) => h.slug === slug);
-    if (match) setValue("home", match.formValue);
+    if (match) {
+      setValue("home", match.formValue);
+      // Bring the home's card into view (e.g. the Your Needs sensory-room link to Perrin House).
+      setTimeout(() => document.getElementById(match.slug)?.scrollIntoView({ behavior: "smooth", block: "start" }), 300);
+    }
   }, [setValue]);
 
   const requestTour = (home: Home) => {
@@ -216,7 +220,9 @@ const OurHomes = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {openHomes.map((home, i) => (
               <FadeIn key={home.slug} delay={i * 0.1}>
-                <HomeCard home={home} onRequest={requestTour} />
+                <div id={home.slug} className="scroll-mt-28 h-full">
+                  <HomeCard home={home} onRequest={requestTour} />
+                </div>
               </FadeIn>
             ))}
           </div>
@@ -236,7 +242,9 @@ const OurHomes = () => {
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {upcomingHomes.map((home, i) => (
               <FadeIn key={home.slug} delay={i * 0.1}>
-                <HomeCard home={home} onRequest={requestTour} />
+                <div id={home.slug} className="scroll-mt-28 h-full">
+                  <HomeCard home={home} onRequest={requestTour} />
+                </div>
               </FadeIn>
             ))}
           </div>

@@ -10,6 +10,7 @@ import perrinImg from "@/assets/homes/perrin-house.jpg";
 import perrinFlat2Img from "@/assets/homes/perrin-flat2.jpg";
 import perrinFlat3Img from "@/assets/homes/perrin-flat3.jpg";
 import perrinFlat4Img from "@/assets/homes/perrin-flat4.jpg";
+import perrinSensoryImg from "@/assets/homes/perrin-sensory-room-labelled.jpg";
 import millRoadImg from "@/assets/homes/mill-road.jpg";
 
 export interface Home {
@@ -89,7 +90,7 @@ export const homes: Home[] = [
       "5 minutes from Addenbrooke's Hospital",
     ],
     hero: perrinImg,
-    gallery: [perrinImg, perrinFlat3Img, perrinFlat2Img, perrinFlat4Img],
+    gallery: [perrinImg, perrinSensoryImg, perrinFlat3Img, perrinFlat2Img, perrinFlat4Img],
   },
   {
     slug: "mill-road",
