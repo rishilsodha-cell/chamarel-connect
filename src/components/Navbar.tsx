@@ -7,8 +7,8 @@ const mobileLinks = [
   { label: "Home", path: "/" },
   { label: "Your Needs", path: "/your-needs" },
   { label: "Your Support", path: "/your-support" },
+  { label: "Our Homes", path: "/our-homes" },
   { label: "Life at Chamarel", path: "/gallery" },
-  { label: "Stories", path: "/stories" },
   { label: "About Us", path: "/about" },
   { label: "Community Care Services", path: "/community-care-services" },
   { label: "Make a Referral", path: "/referral" },
@@ -17,13 +17,13 @@ const mobileLinks = [
 ];
 
 const desktopLinks = [
+  { label: "Our Homes", path: "/our-homes" },
   { label: "Your Needs", path: "/your-needs" },
   { label: "Your Support", path: "/your-support" },
   { label: "Community Care", path: "/community-care-services" },
   { label: "Referral", path: "/referral" },
   { label: "About Us", path: "/about" },
   { label: "Gallery", path: "/gallery" },
-  { label: "Stories", path: "/stories" },
   { label: "Careers", path: "/careers" },
   { label: "Contact", path: "/#get-in-touch" },
 ];

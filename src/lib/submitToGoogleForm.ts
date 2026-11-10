@@ -8,10 +8,14 @@
  * weaker guarantee than a parsed response, so anything that does not load
  * inside `timeoutMs` is reported as a failure rather than quietly treated as
  * sent — the caller is expected to show the phone number and email instead.
+ *
+ * A value may be an array: Google's checkbox questions expect the same
+ * `entry.N` name repeated once per ticked option, not one comma-joined value,
+ * which Google silently discards as an unrecognised choice.
  */
 export function submitToGoogleForm(
   action: string,
-  values: Record<string, string | undefined>,
+  values: Record<string, string | string[] | undefined>,
   timeoutMs = 12000,
 ): Promise<void> {
   return new Promise((resolve, reject) => {
@@ -29,12 +33,16 @@ export function submitToGoogleForm(
     form.style.display = "none";
 
     Object.entries(values).forEach(([field, value]) => {
-      if (value === undefined || value === null || value === "") return;
-      const input = document.createElement("input");
-      input.type = "hidden";
-      input.name = field;
-      input.value = value;
-      form.appendChild(input);
+      if (value === undefined || value === null) return;
+      const list = Array.isArray(value) ? value : [value];
+      list.forEach((entry) => {
+        if (entry === undefined || entry === null || entry === "") return;
+        const input = document.createElement("input");
+        input.type = "hidden";
+        input.name = field;
+        input.value = entry;
+        form.appendChild(input);
+      });
     });
 
     let submitted = false;

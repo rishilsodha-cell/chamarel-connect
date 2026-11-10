@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Linkedin, Facebook, Instagram, Mail, Phone, ArrowRight } from "lucide-react";
+import { Linkedin, Facebook, Instagram, Mail, Phone } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -21,7 +21,6 @@ import cafeOutingImg from "@/assets/photos/cafe-outing.png";
 import craftSessionImg from "@/assets/photos/craft-session.png";
 import gardeningPottingImg from "@/assets/photos/gardening-potting.png";
 import zooVisitImg from "@/assets/photos/zoo-visit.png";
-import gardeningPairImg from "@/assets/photos/gardening-pair.png";
 
 const contactSchema = z.object({
   firstName: z.string().min(1, "Required"),
@@ -47,11 +46,6 @@ const stats = [
   { label: "National Living Wage Employer", value: "NLW" },
 ];
 
-const stories = [
-  { title: "Empowering independence", excerpt: "How we helped James build confidence and develop daily living skills in his supported living setting.", image: gardeningPairImg },
-  { title: "A journey to confidence", excerpt: "Sarah's story of recovery through trauma-informed mental health support and community engagement.", image: cafeOutingImg },
-  { title: "Thriving in the community", excerpt: "Mark's progression from intensive support to independent living with our dedicated care team.", image: gardenPartyImg },
-];
 
 const Index = () => {
   const { register, handleSubmit, reset, formState: { errors } } = useForm<ContactForm>({
@@ -94,22 +88,22 @@ const Index = () => {
         <div className="relative container-narrow py-28 md:py-40 lg:py-48">
           <FadeIn>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight leading-tight max-w-3xl text-primary-foreground">
-              Care & Support for People with Learning Disabilities, Autism and Mental Health Needs
+              Nearly 10 years providing care for adults with learning disabilities, autism and mental health needs
             </h1>
           </FadeIn>
           <FadeIn delay={0.15}>
             <p className="mt-6 text-lg md:text-xl text-primary-foreground/85 max-w-2xl leading-relaxed">
-              At Chamarel Healthcare, we provide compassionate, person-centred care for adults with learning disabilities, autism, and mental health needs — delivered in London and the surrounding community.
+              Supported living and domiciliary care across London and Cambridgeshire. Five homes, one team, and vacancies now — see inside before you decide.
             </p>
           </FadeIn>
           <FadeIn delay={0.3}>
             <div className="flex flex-wrap gap-4 mt-10">
-              <Link to="/your-needs" className="px-8 py-4 bg-primary-foreground text-primary rounded-full font-semibold hover:-translate-y-0.5 transition-all duration-250 hover:shadow-lg">
+              <Link to="/our-homes" className="px-8 py-4 bg-primary-foreground text-primary rounded-full font-semibold hover:-translate-y-0.5 transition-all duration-250 hover:shadow-lg">
                 Explore Our Services
               </Link>
-              <Link to="/referrals" className="px-8 py-4 bg-transparent border-2 border-primary-foreground text-primary-foreground rounded-full font-semibold hover:-translate-y-0.5 transition-all duration-250 hover:bg-primary-foreground/10">
-                Make a Referral
-              </Link>
+              <a href="/#get-in-touch" className="px-8 py-4 bg-transparent border-2 border-primary-foreground text-primary-foreground rounded-full font-semibold hover:-translate-y-0.5 transition-all duration-250 hover:bg-primary-foreground/10">
+                Contact Us
+              </a>
             </div>
           </FadeIn>
         </div>
@@ -164,33 +158,6 @@ const Index = () => {
                 <div>
                   <div className="text-3xl font-semibold mb-2 text-accent">{stat.value}</div>
                   <div className="text-sm text-primary-foreground/80 font-medium uppercase tracking-wide">{stat.label}</div>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Success Stories */}
-      <section className="section-padding bg-secondary">
-        <div className="container-narrow">
-          <FadeIn>
-            <h2 className="text-3xl md:text-4xl font-medium text-center mb-12">Success Stories</h2>
-          </FadeIn>
-          <div className="grid md:grid-cols-3 gap-6">
-            {stories.map((story, i) => (
-              <FadeIn key={i} delay={i * 0.1}>
-                <div className="bg-card rounded-2xl h-full flex flex-col overflow-hidden border-t-4 border-primary" style={{ boxShadow: "var(--card-shadow)" }}>
-                  <div className="h-[180px] overflow-hidden">
-                    <img src={story.image} alt={story.title} className="w-full h-full object-cover" />
-                  </div>
-                  <div className="p-8 flex flex-col flex-1">
-                    <h3 className="text-lg font-medium mb-3">{story.title}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed flex-1">{story.excerpt}</p>
-                    <Link to="/stories" className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-accent hover:text-primary transition-colors">
-                      Read More <ArrowRight size={16} />
-                    </Link>
-                  </div>
                 </div>
               </FadeIn>
             ))}

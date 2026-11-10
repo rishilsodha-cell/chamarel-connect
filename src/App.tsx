@@ -15,6 +15,7 @@ import CommunityCare from "./pages/CommunityCare.tsx";
 import CommunityCarePage from "./pages/CommunityCarePage.tsx";
 import Gallery from "./pages/Gallery.tsx";
 import Stories from "./pages/Stories.tsx";
+import OurHomes from "./pages/OurHomes.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import Paresh from "./pages/Paresh.tsx";
 import NewsletterArchive from "./pages/NewsletterArchive.tsx";
@@ -38,6 +39,8 @@ const App = () => (
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/community-care" element={<CommunityCare />} />
           <Route path="/community-care-services" element={<CommunityCarePage />} />
+          <Route path="/our-homes" element={<OurHomes />} />
+          <Route path="/homes" element={<OurHomes />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/stories" element={<Stories />} />
           <Route path="/paresh" element={<Paresh />} />
