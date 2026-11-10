@@ -12,6 +12,7 @@ import OurHomes from "./pages/OurHomes.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import Paresh from "./pages/Paresh.tsx";
 import NewsletterArchive from "./pages/NewsletterArchive.tsx";
+import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -21,6 +22,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<Navigate to="/" replace />} />
