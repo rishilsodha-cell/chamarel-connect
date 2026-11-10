@@ -1,10 +1,4 @@
-import { Instagram, Facebook, Linkedin } from "lucide-react";
-
-const socials = [
-  { icon: Instagram, label: "Instagram", href: "https://instagram.com/chamarelhealthcare" },
-  { icon: Facebook, label: "Facebook", href: "https://facebook.com/chamarelhealthcare" },
-  { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com/company/chamarelhealthcare" },
-];
+import { socialLinks as socials } from "@/data/social";
 
 const SocialSidebar = () => (
   <div className="fixed left-0 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col gap-2 pl-3">

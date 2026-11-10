@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Linkedin, Facebook, Instagram } from "lucide-react";
+import { socialLinks } from "@/data/social";
 
 const Footer = () => (
   <footer className="bg-primary text-primary-foreground">
@@ -25,15 +25,11 @@ const Footer = () => (
         <div>
           <h4 className="text-sm font-semibold uppercase tracking-wide mb-4">Connect</h4>
           <div className="flex gap-4">
-            <a href="#" aria-label="LinkedIn" className="text-primary-foreground/70 hover:text-primary-foreground transition-colors">
-              <Linkedin size={20} strokeWidth={1.5} />
-            </a>
-            <a href="#" aria-label="Facebook" className="text-primary-foreground/70 hover:text-primary-foreground transition-colors">
-              <Facebook size={20} strokeWidth={1.5} />
-            </a>
-            <a href="#" aria-label="Instagram" className="text-primary-foreground/70 hover:text-primary-foreground transition-colors">
-              <Instagram size={20} strokeWidth={1.5} />
-            </a>
+            {socialLinks.map((s) => (
+              <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label} className="text-primary-foreground/70 hover:text-primary-foreground transition-colors">
+                <s.icon size={20} strokeWidth={1.5} />
+              </a>
+            ))}
           </div>
         </div>
       </div>
@@ -41,11 +37,7 @@ const Footer = () => (
       <div className="border-t border-primary-foreground/10 mt-12 pt-8">
         <p className="text-center text-sm text-primary-foreground/70 mb-4">Stay connected with Chamarel Healthcare</p>
         <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
-          {[
-            { icon: Instagram, label: "Instagram", href: "https://instagram.com/chamarelhealthcare" },
-            { icon: Facebook, label: "Facebook", href: "https://facebook.com/chamarelhealthcare" },
-            { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com/company/chamarelhealthcare" },
-          ].map((s) => (
+          {socialLinks.map((s) => (
             <a
               key={s.label}
               href={s.href}

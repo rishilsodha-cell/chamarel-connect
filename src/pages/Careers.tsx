@@ -1,3 +1,4 @@
+import { SOCIAL_URLS } from "@/data/social";
 import Layout from "@/components/Layout";
 import FadeIn from "@/components/FadeIn";
 import { Briefcase, GraduationCap, Heart, Clock, Linkedin, Phone } from "lucide-react";
@@ -110,13 +111,11 @@ const Careers = () => (
             <p className="text-sm text-muted-foreground leading-relaxed mb-2">
               We share team updates, job opportunities, and care sector insights on LinkedIn.
             </p>
-            <div className="flex items-center justify-center gap-4 my-6 text-sm text-muted-foreground">
+            <div className="flex items-center justify-center my-6 text-sm">
               <span className="font-semibold text-foreground">Chamarel Healthcare</span>
-              <span>·</span>
-              <span>2.4K followers</span>
             </div>
             <a
-              href="https://linkedin.com/company/chamarelhealthcare"
+              href={SOCIAL_URLS.linkedin}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-white font-semibold bg-[hsl(201,100%,35%)] hover:opacity-90 transition-all hover:-translate-y-0.5 hover:shadow-lg"

@@ -1,3 +1,4 @@
+import { SOCIAL_URLS } from "@/data/social";
 import { Instagram } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
 
@@ -19,7 +20,7 @@ const InstagramGrid = () => (
       <FadeIn delay={0.3}>
         <div className="text-center mt-10">
           <a
-            href="https://www.instagram.com/chamarelhealthcare"
+            href={SOCIAL_URLS.instagram}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full text-sm font-medium transition-all duration-200"

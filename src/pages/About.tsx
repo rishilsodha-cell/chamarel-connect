@@ -1,4 +1,5 @@
-import { Heart, Compass, Users, Camera, Quote, Facebook, ThumbsUp } from "lucide-react";
+import { Heart, Compass, Users, Camera, Quote, Instagram } from "lucide-react";
+import { SOCIAL_URLS } from "@/data/social";
 import Layout from "@/components/Layout";
 import FadeIn from "@/components/FadeIn";
 import AreasWeServe from "@/components/AreasWeServe";
@@ -104,7 +105,7 @@ const About = () => (
       </div>
     </section>
 
-    {/* Facebook Widget + Behind the Scenes */}
+    {/* Instagram card + Behind the Scenes */}
     <section className="py-16 bg-secondary">
       <div className="container-narrow">
         <div className="grid md:grid-cols-3 gap-8">
@@ -130,24 +131,21 @@ const About = () => (
           <div className="md:col-span-1">
             <FadeIn delay={0.2}>
               <div className="bg-card rounded-2xl p-6 sticky top-24" style={{ boxShadow: "var(--card-shadow)" }}>
-                <h3 className="text-sm font-semibold uppercase tracking-wide mb-4 text-muted-foreground">Connect with us on Facebook</h3>
-                {/* Placeholder for Facebook Page Plugin embed — replace with iframe from developers.facebook.com/docs/plugins/page-plugin */}
+                <h3 className="text-sm font-semibold uppercase tracking-wide mb-4 text-muted-foreground">Connect with us on Instagram</h3>
                 <div className="bg-secondary rounded-xl aspect-[3/4] flex flex-col items-center justify-center gap-3 mb-4">
-                  <div className="w-16 h-16 rounded-full bg-[hsl(221,44%,41%)] flex items-center justify-center">
-                    <Facebook size={28} strokeWidth={1.5} className="text-white" />
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] flex items-center justify-center">
+                    <Instagram size={28} strokeWidth={1.5} className="text-white" />
                   </div>
                   <span className="text-sm font-medium">Chamarel Healthcare</span>
-                  <div className="flex items-center gap-1 text-xs text-muted-foreground">
-                    <ThumbsUp size={12} /> <span>1.2K followers</span>
-                  </div>
+                  <span className="text-xs text-muted-foreground">@chamarelhealthcare</span>
                 </div>
                 <a
-                  href="https://facebook.com/chamarelhealthcare"
+                  href={SOCIAL_URLS.instagram}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block w-full text-center px-5 py-3 rounded-xl text-sm font-semibold text-white bg-[hsl(221,44%,41%)] hover:opacity-90 transition-opacity"
+                  className="block w-full text-center px-5 py-3 rounded-xl text-sm font-semibold text-white bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] hover:opacity-90 transition-opacity"
                 >
-                  Follow on Facebook
+                  Follow on Instagram
                 </a>
               </div>
             </FadeIn>

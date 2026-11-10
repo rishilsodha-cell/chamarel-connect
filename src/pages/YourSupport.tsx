@@ -1,3 +1,4 @@
+import { SOCIAL_URLS } from "@/data/social";
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import FadeIn from "@/components/FadeIn";
@@ -37,7 +38,7 @@ const supports = [
     desc: "Structured, meaningful activities that promote skills, confidence and social connection — from gardening and arts to community outings and supported employment.",
     photo: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600",
     cta: "Follow Our Activities on Instagram",
-    href: "https://www.instagram.com/chamarelhealthcare",
+    href: SOCIAL_URLS.instagram,
     external: true,
     variant: "instagram" as const,
   },

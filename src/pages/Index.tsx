@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Linkedin, Facebook, Instagram, Mail, Phone } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
+import { socialLinks } from "@/data/social";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -227,13 +228,9 @@ const Index = () => {
                 <div className="my-5" style={{ width: 60, height: 1, backgroundColor: "#00706B" }} />
 
                 <div className="flex flex-col sm:flex-row gap-4">
-                  {[
-                    { Icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/company/chamarel-healthcare" },
-                    { Icon: Facebook, label: "Facebook", href: "https://www.facebook.com/chamarelhealthcare" },
-                    { Icon: Instagram, label: "Instagram", href: "https://www.instagram.com/chamarelhealthcare" },
-                  ].map((s) => (
+                  {socialLinks.map((s) => (
                     <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:opacity-70 transition-opacity" style={{ color: "#00706B" }}>
-                      <s.Icon size={22} strokeWidth={1.5} />
+                      <s.icon size={22} strokeWidth={1.5} />
                       <span className="text-muted-foreground" style={{ fontSize: 13 }}>{s.label}</span>
                       <span style={{ fontSize: 13 }}>→</span>
                     </a>
