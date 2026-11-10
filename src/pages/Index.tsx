@@ -88,12 +88,12 @@ const Index = () => {
         <div className="relative container-narrow py-28 md:py-40 lg:py-48">
           <FadeIn>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight leading-tight max-w-3xl text-primary-foreground">
-              Nearly 10 years providing care for adults with learning disabilities, autism and mental health needs
+              A decade of person-centred care
             </h1>
           </FadeIn>
           <FadeIn delay={0.15}>
             <p className="mt-6 text-lg md:text-xl text-primary-foreground/85 max-w-2xl leading-relaxed">
-              Supported living and domiciliary care across London and Cambridgeshire. Five homes, one team, and vacancies now — see inside before you decide.
+              Supported living and domiciliary care for adults with learning disabilities, autism and mental health needs, across London and Cambridgeshire. Five homes, one team, and vacancies now — see inside before you decide.
             </p>
           </FadeIn>
           <FadeIn delay={0.3}>
