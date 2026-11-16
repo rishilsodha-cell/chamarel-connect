@@ -279,11 +279,11 @@ const OurHomes = () => {
                   ))}
                 </div>
 
-                <div className="my-6" style={{ width: 60, height: 1, backgroundColor: "#00706B" }} />
+                <div className="my-6 bg-accent" style={{ width: 60, height: 1 }} />
                 <p className="text-sm text-muted-foreground">
                   We use your details only to send what you have asked for and to follow up on your
                   enquiry. We never sell or share them. See our{" "}
-                  <a href="/privacy" className="underline" style={{ color: "#00706B" }}>
+                  <a href="/privacy" className="underline text-primary">
                     privacy policy
                   </a>
                   .
@@ -302,7 +302,7 @@ const OurHomes = () => {
                   <p className="text-sm text-foreground/75 leading-relaxed mt-3">
                     Your request has reached us. We will email your tour and brochure within 24 hours,
                     Monday to Friday. If it is urgent, call{" "}
-                    <a href={enquiryPhoneHref} className="underline" style={{ color: "#00706B" }}>
+                    <a href={enquiryPhoneHref} className="underline text-primary">
                       {enquiryPhone}
                     </a>
                     .

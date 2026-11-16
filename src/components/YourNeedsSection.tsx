@@ -120,13 +120,12 @@ const YourNeedsSection = ({ homepage = false }: Props) => (
   <>
     {needs.map((need, i) => {
       const reversed = i % 2 !== 0;
-      const bgColor = i % 2 === 0 ? "bg-background" : "";
+      const bgColor = i % 2 === 0 ? "bg-background" : "bg-secondary";
 
       return (
         <Fragment key={need.title}>
         <section
           className={`py-16 md:py-20 ${bgColor}`}
-          style={i % 2 !== 0 ? { backgroundColor: "#F9F7F4" } : undefined}
         >
           <div className="container-narrow">
             <div className={`grid md:grid-cols-2 gap-10 md:gap-16 items-center ${reversed ? "md:direction-rtl" : ""}`}>

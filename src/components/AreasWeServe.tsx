@@ -9,10 +9,10 @@ interface Props {
 }
 
 const AreasWeServe = ({ slim = false }: Props) => (
-  <section className={slim ? "py-12" : "py-16"} style={{ backgroundColor: "#F0FAF9" }}>
+  <section className={`${slim ? "py-12" : "py-16"} bg-secondary`}>
     <div className="container-narrow">
       <FadeIn>
-        <h2 className="text-2xl md:text-[32px] font-bold text-center mb-3" style={{ color: "#00706B" }}>
+        <h2 className="text-3xl md:text-4xl font-medium text-center mb-4">
           Areas We Serve
         </h2>
         {!slim && (
@@ -31,8 +31,8 @@ const AreasWeServe = ({ slim = false }: Props) => (
           {locations.map((loc) => (
             <span
               key={loc}
-              className="inline-flex items-center gap-1.5 rounded-full text-sm font-medium bg-white"
-              style={{ border: "1.5px solid #00706B", color: "#00706B", padding: "8px 20px" }}
+              className="inline-flex items-center gap-1.5 rounded-full text-sm font-medium bg-card text-primary border-[1.5px] border-primary"
+              style={{ padding: "8px 20px" }}
             >
               <MapPin size={14} strokeWidth={2} />
               {loc}
@@ -43,7 +43,7 @@ const AreasWeServe = ({ slim = false }: Props) => (
       <FadeIn delay={0.2}>
         <p className="text-center text-muted-foreground italic text-sm mt-8">
           Don't see your area?{" "}
-          <a href="#contact" className="underline" style={{ color: "#00706B" }}>
+          <a href="#contact" className="underline text-primary">
             Contact us
           </a>
           {" "}— we may still be able to help.

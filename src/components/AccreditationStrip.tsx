@@ -12,7 +12,7 @@ const badges = [
 ];
 
 const AccreditationStrip = () => (
-  <section className="py-10" style={{ backgroundColor: "#FFFFFF", paddingTop: 40, paddingBottom: 40 }}>
+  <section className="py-10 bg-background border-t border-border/60">
     <div className="container-narrow">
       <FadeIn>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-end justify-items-center">
@@ -28,10 +28,10 @@ const AccreditationStrip = () => (
                 <img
                   src={item.image}
                   alt={item.label}
-                  className="h-20 w-auto object-contain transition-opacity duration-200 group-hover:opacity-80"
+                  className="h-20 w-auto object-contain mix-blend-multiply transition-opacity duration-200 group-hover:opacity-80"
                 />
               </div>
-              <span style={{ color: "#666666", fontSize: 12 }} className="font-medium">{item.label}</span>
+              <span className="font-medium text-xs text-muted-foreground">{item.label}</span>
             </a>
           ))}
         </div>

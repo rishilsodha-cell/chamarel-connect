@@ -34,10 +34,10 @@ const Navbar = () => {
       <div className="container-narrow flex items-center justify-between h-16 md:h-20">
         <Link to="/" className="flex flex-col flex-shrink-0">
           <div className="text-[18px] leading-tight">
-            <span className="font-bold" style={{ color: "#00706B" }}>Chamarel</span>{" "}
-            <span className="font-normal" style={{ color: "#2D2D2D" }}>Healthcare</span>
+            <span className="font-bold text-primary">Chamarel</span>{" "}
+            <span className="font-normal text-foreground">Healthcare</span>
           </div>
-          <div className="h-0.5 w-9 mt-1 rounded-full" style={{ backgroundColor: "#00706B" }} />
+          <div className="h-0.5 w-9 mt-1 rounded-full bg-accent" />
         </Link>
 
         {/* Desktop nav */}
@@ -98,11 +98,10 @@ const Navbar = () => {
                     key={link.path}
                     {...(linkProps as any)}
                     onClick={() => handleClick(link.path)}
-                    className="text-lg font-medium py-4 px-6"
+                    className="text-lg font-medium py-4 px-6 text-foreground"
                     style={{
-                      color: "#2D2D2D",
-                      borderLeft: "3px solid #00706B",
-                      borderBottom: i < mobileLinks.length - 1 ? "1px solid #EEEEEE" : "none",
+                      borderLeft: "3px solid hsl(var(--accent))",
+                      borderBottom: i < mobileLinks.length - 1 ? "1px solid hsl(var(--border))" : "none",
                     }}
                   >
                     {link.label}

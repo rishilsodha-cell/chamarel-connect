@@ -75,7 +75,7 @@ const InstagramGrid = () => {
   }, []);
 
   return (
-    <section className="section-padding" style={{ backgroundColor: "#FFFFFF" }}>
+    <section className="section-padding bg-background">
       <div className="container-narrow">
         <FadeIn>
           <h2 className="text-3xl md:text-4xl font-medium text-center mb-2">Follow Our Journey</h2>
@@ -113,7 +113,7 @@ const InstagramGrid = () => {
               href={SOCIAL_URLS.instagram}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full text-sm font-medium transition-colors duration-200 border-2 border-[#00706B] text-[#00706B] bg-white hover:bg-[#00706B] hover:text-white px-8 py-3"
+              className="inline-flex items-center gap-2 rounded-full text-sm font-medium transition-colors duration-200 border-2 border-primary text-primary bg-transparent hover:bg-primary hover:text-primary-foreground px-8 py-3"
             >
               <Instagram size={16} strokeWidth={1.5} />
               Follow us on Instagram

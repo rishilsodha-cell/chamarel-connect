@@ -54,13 +54,13 @@ const Stories = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="section-padding bg-secondary">
+      <section className="bg-primary text-primary-foreground py-20 md:py-24">
         <div className="container-narrow max-w-3xl text-center">
           <FadeIn>
             <h1 className="text-4xl md:text-5xl font-medium tracking-tight">Stories of Brilliance</h1>
           </FadeIn>
           <FadeIn delay={0.1}>
-            <p className="mt-6 text-lg leading-relaxed text-foreground/80">
+            <p className="mt-6 text-lg leading-relaxed text-primary-foreground/85">
               Brilliant things happen every day at Chamarel Healthcare. Here we celebrate the people we support and the teams who make it possible.
             </p>
           </FadeIn>

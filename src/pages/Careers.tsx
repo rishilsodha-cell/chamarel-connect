@@ -14,34 +14,32 @@ const perks = [
 
 const Careers = () => (
   <Layout>
-    <section className="section-padding">
-      <div className="container-narrow max-w-3xl">
+    <section className="bg-primary text-primary-foreground">
+      <div className="container-narrow py-16 md:py-24">
         <FadeIn>
-          <h1 className="text-4xl md:text-5xl font-medium tracking-tight">Join the Chamarel Healthcare Team</h1>
+          <h1 className="text-4xl md:text-5xl font-medium tracking-tight max-w-3xl">Join the Chamarel Healthcare Team</h1>
         </FadeIn>
         <FadeIn delay={0.1}>
-          <p className="mt-8 text-lg leading-relaxed text-foreground/80">
+          <p className="mt-6 text-lg leading-relaxed text-primary-foreground/85 max-w-2xl">
             We're looking for compassionate, dedicated people to join our growing team. At Chamarel Healthcare, we invest in our staff through ongoing training in Positive Behaviour Support (PBS), trauma-informed care, and professional development. We are proud to be a National Living Wage employer.
           </p>
           <div className="flex flex-wrap gap-4 mt-8">
             <a
               href="#apply"
-              className="inline-block px-8 py-4 bg-primary text-primary-foreground rounded-full font-semibold hover:-translate-y-0.5 transition-all duration-250 hover:shadow-lg"
+              className="inline-block px-8 py-4 bg-primary-foreground text-primary rounded-full font-semibold hover:-translate-y-0.5 transition-all duration-250 hover:shadow-lg"
             >
               Apply Now
             </a>
             <a
               href={enquiryPhoneHref}
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold border-2 transition-all duration-250 hover:-translate-y-0.5 hover:shadow-lg"
-              style={{ borderColor: "#00706B", color: "#00706B" }}
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold border-2 border-primary-foreground text-primary-foreground transition-all duration-250 hover:-translate-y-0.5 hover:bg-primary-foreground/10"
             >
               <Phone size={18} strokeWidth={1.5} />
               Call {enquiryPhone}
             </a>
             <a
               href={secondPhoneHref}
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold border-2 transition-all duration-250 hover:-translate-y-0.5 hover:shadow-lg"
-              style={{ borderColor: "#00706B", color: "#00706B" }}
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold border-2 border-primary-foreground text-primary-foreground transition-all duration-250 hover:-translate-y-0.5 hover:bg-primary-foreground/10"
             >
               <Phone size={18} strokeWidth={1.5} />
               Call {secondPhone}
@@ -114,7 +112,7 @@ const Careers = () => (
       <div className="container-narrow max-w-2xl">
         <FadeIn>
           <div className="bg-card rounded-2xl p-8 md:p-10 text-center" style={{ boxShadow: "var(--card-shadow)" }}>
-            <div className="w-14 h-14 rounded-2xl bg-[hsl(201,100%,35%)] flex items-center justify-center mx-auto mb-5">
+            <div className="w-14 h-14 rounded-2xl bg-primary flex items-center justify-center mx-auto mb-5">
               <Linkedin size={28} strokeWidth={1.5} className="text-white" />
             </div>
             <h2 className="text-2xl font-medium mb-3">Follow Us on LinkedIn</h2>
@@ -128,7 +126,7 @@ const Careers = () => (
               href={SOCIAL_URLS.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-white font-semibold bg-[hsl(201,100%,35%)] hover:opacity-90 transition-all hover:-translate-y-0.5 hover:shadow-lg"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-primary-foreground font-semibold bg-primary hover:opacity-90 transition-all hover:-translate-y-0.5 hover:shadow-lg"
             >
               <Linkedin size={18} strokeWidth={1.5} />
               Follow on LinkedIn

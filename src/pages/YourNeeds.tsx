@@ -5,13 +5,13 @@ import YourNeedsSection from "@/components/YourNeedsSection";
 
 const YourNeeds = () => (
   <Layout>
-    <section className="section-padding">
-      <div className="container-narrow max-w-3xl">
+    <section className="bg-primary text-primary-foreground">
+      <div className="container-narrow py-16 md:py-24">
         <FadeIn>
-          <h1 className="text-4xl md:text-5xl font-medium tracking-tight">Your Needs</h1>
+          <h1 className="text-4xl md:text-5xl font-medium tracking-tight max-w-3xl">Your Needs</h1>
         </FadeIn>
         <FadeIn delay={0.1}>
-          <p className="mt-8 text-lg leading-relaxed text-foreground/80">
+          <p className="mt-6 text-lg leading-relaxed text-primary-foreground/85 max-w-2xl">
             At Chamarel Healthcare, we offer care and support to people with a range of needs. Whether you have a learning disability, autism, or mental health challenges, our expert teams tailor their support to meet your individual goals, preferences and values.
           </p>
         </FadeIn>

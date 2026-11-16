@@ -2,8 +2,8 @@ import { enquiryEmail, enquiryEmailHref, enquiryPhone, enquiryPhoneHref } from "
 
 const AnnouncementBar = () => (
   <div
-    className="flex items-center justify-center text-center px-4"
-    style={{ height: 44, backgroundColor: "#00706B" }}
+    className="flex items-center justify-center text-center px-4 bg-primary"
+    style={{ height: 44 }}
   >
     <span className="text-white text-[13px]">
       🏅 CQC Inspected &amp; Rated Good
